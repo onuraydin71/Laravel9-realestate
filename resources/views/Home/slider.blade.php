@@ -5,7 +5,7 @@
       <div class="aa-top-slider">
         <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
-          <img src="{{asset('assets')}}/img/slider/3.jpg" alt="img">
+          <img src="{{asset('assets')}}/img/slider/3.jpg" alt="{{asset('assets')}}/img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">Duplex</span>
@@ -20,7 +20,7 @@
         <!-- / Top slider single slide -->
         <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
-          <img src="{{asset('assets')}}/img/slider/2.jpg" alt="img">
+          <img src="{{asset('assets')}}/img/slider/2.jpg" alt="{{asset('assets')}}/img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">Duplex</span>
@@ -35,7 +35,7 @@
         <!-- / Top slider single slide -->
         <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
-          <img src="{{asset('assets')}}/img/slider/1.jpg" alt="img">
+          <img src="{{asset('assets')}}/img/slider/1.jpg" alt="{{asset('assets')}}/img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">Duplex</span>
@@ -50,7 +50,7 @@
         <!-- / Top slider single slide -->       
          <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
-          <img src="{{asset('assets')}}/img/slider/5.jpg" alt="img">
+          <img src="{{asset('assets')}}/img/slider/5.jpg" alt="{{asset('assets')}}/img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">Duplex</span>
@@ -65,7 +65,7 @@
         <!-- / Top slider single slide -->        
          <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
-          <img src="{{asset('assets')}}/img/slider/4.jpg" alt="img">
+          <img src="{{asset('assets')}}/img/slider/4.jpg" alt="{{asset('assets')}}/img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">Duplex</span>
@@ -80,7 +80,7 @@
         <!-- / Top slider single slide -->
          <!-- Top slider single slide -->
         <div class="aa-top-slider-single">
-          <img src="{{asset('assets')}}/img/slider/6.jpg" alt="img">
+          <img src="{{asset('assets')}}/img/slider/6.jpg" alt="{{asset('assets')}}/img">
           <!-- Top slider content -->
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">Duplex</span>
@@ -96,6 +96,8 @@
       </div>
     </div>
   </section>
+  <!-- End slider  -->
+
+
 
   
-  <!-- End slider  -->

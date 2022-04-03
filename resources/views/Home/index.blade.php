@@ -1,15 +1,27 @@
 @extends('layouts.frontbase')
- 
-@section('title', 'Real State')
- 
-@section('sidebar')
-    
- 
-@parent
+
+@section('title','Real Estate')
+
+ @section('slider')
+ @include('home.slider')
+@endsection
+
+  @section('content')
+  
 
  
- <!-- Advance Search -->
- <section id="aa-advance-search">
+
+  <!-- Pre Loader -->
+  <div id="aa-preloader-area">
+    <div class="pulse"></div>
+  </div>
+  <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
+
+
+  <!-- Advance Search -->
+  <section id="aa-advance-search">
     <div class="container">
       <div class="aa-advance-search-area">
         <div class="form">
@@ -92,6 +104,8 @@
   </section>
   <!-- / Advance Search -->
 
+
+
   <!-- About us -->
   <section id="aa-about-us">
     <div class="container">
@@ -143,7 +157,7 @@
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="img/item/1.jpg" alt="img">
+                  <img src="{{asset('assets')}}/img/item/1.jpg" alt="{{asset('assets')}}/img">
                 </a>
                 <div class="aa-tag for-sale">
                   For Sale
@@ -171,7 +185,7 @@
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="img/item/2.jpg" alt="img">
+                  <img src="{{asset('assets')}}/img/item/2.jpg" alt="{{asset('assets')}}/img">
                 </a>
                 <div class="aa-tag for-rent">
                   For Rent
@@ -199,7 +213,7 @@
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="img/item/3.jpg" alt="img">
+                  <img src="{{asset('assets')}}/img/item/3.jpg" alt="{{asset('assets')}}/img">
                 </a>
                 <div class="aa-tag sold-out">
                   Sold Out
@@ -227,7 +241,7 @@
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="img/item/4.jpg" alt="img">
+                  <img src="{{asset('assets')}}/img/item/4.jpg" alt="{{asset('assets')}}/img">
                 </a>
                 <div class="aa-tag for-sale">
                   For Sale
@@ -255,7 +269,7 @@
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="img/item/5.jpg" alt="img">
+                  <img src="{{asset('assets')}}/img/item/5.jpg" alt="{{asset('assets')}}/img">
                 </a>                
                 <div class="aa-tag sold-out">
                   Sold Out
@@ -283,7 +297,7 @@
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="img/item/6.jpg" alt="img">
+                  <img src="{{asset('assets')}}/img/item/6.jpg" alt="{{asset('assets')}}/img">
                 </a>
                 <div class="aa-tag for-rent">
                   For Rent
@@ -415,7 +429,7 @@
                 <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-1.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-1.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">Philip Smith</a></h4>
@@ -432,7 +446,7 @@
                 <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-5.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-5.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">Adam Barney</a></h4>
@@ -449,7 +463,7 @@
                 <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-3.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-3.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">Paul Walker</a></h4>
@@ -466,7 +480,7 @@
                 <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-4.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-4.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">John Smith</a></h4>
@@ -483,7 +497,7 @@
                  <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-1.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-1.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">Philip Smith</a></h4>
@@ -500,7 +514,7 @@
                 <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-5.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-5.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">Adam Barney</a></h4>
@@ -517,7 +531,7 @@
                 <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-3.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-3.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">Paul Walker</a></h4>
@@ -534,7 +548,7 @@
                 <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="img/agents/agent-4.png" alt="agent member image">
+                      <img src="{{asset('assets')}}/img/agents/agent-4.png" alt="agent member image">
                     </div>
                     <div class="aa-agetns-info">
                       <h4><a href="#">John Smith</a></h4>
@@ -575,7 +589,7 @@
                 <li>
                   <div class="aa-testimonial-single">
                     <div class="aa-testimonial-img">
-                      <img src="img/testimonial-1.png" alt="testimonial img">
+                      <img src="{{asset('assets')}}/img/testimonial-1.png" alt="testimonial img">
                     </div>
                     <div class="aa-testimonial-info">
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
@@ -589,7 +603,7 @@
                  <li>
                   <div class="aa-testimonial-single">
                     <div class="aa-testimonial-img">
-                      <img src="img/testimonial-3.png" alt="testimonial img">
+                      <img src="{{asset('assets')}}/img/testimonial-3.png" alt="testimonial img">
                     </div>
                     <div class="aa-testimonial-info">
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
@@ -603,7 +617,7 @@
                  <li>
                   <div class="aa-testimonial-single">
                     <div class="aa-testimonial-img">
-                      <img src="img/testimonial-2.png" alt="testimonial img">
+                      <img src="{{asset('assets')}}/img/testimonial-2.png" alt="testimonial img">
                     </div>
                     <div class="aa-testimonial-info">
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
@@ -632,52 +646,52 @@
             <ul class="aa-client-brand-slider">
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-1.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-1.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-2.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-2.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-3.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-3.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-5.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-5.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-4.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-4.png" alt="brand image">
                 </div>
               </li>
                <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-1.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-1.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-2.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-2.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-3.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-3.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-5.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-5.png" alt="brand image">
                 </div>
               </li>
               <li>
                 <div class="aa-client-single-brand">
-                  <img src="img/client-brand-4.png" alt="brand image">
+                  <img src="{{asset('assets')}}/img/client-brand-4.png" alt="brand image">
                 </div>
               </li>
             </ul>
@@ -705,7 +719,7 @@
                 <div class="col-md-4">
                   <article class="aa-blog-single">
                     <figure class="aa-blog-img">
-                      <a href="#"><img src="img/blog-img-1.jpg" alt="img"></a>
+                      <a href="#"><img src="{{asset('assets')}}/img/blog-img-1.jpg" alt="{{asset('assets')}}/img"></a>
                       <span class="aa-date-tag">15 April, 16</span>
                     </figure>
                     <div class="aa-blog-single-content">
@@ -723,7 +737,7 @@
                 <div class="col-md-4">
                   <article class="aa-blog-single">
                     <figure class="aa-blog-img">
-                      <a href="#"><img src="img/blog-img-2.jpg" alt="img"></a>
+                      <a href="#"><img src="{{asset('assets')}}/img/blog-img-2.jpg" alt="{{asset('assets')}}/img"></a>
                       <span class="aa-date-tag">15 April, 16</span>
                     </figure>
                     <div class="aa-blog-single-content">
@@ -740,7 +754,7 @@
                 <div class="col-md-4">
                   <article class="aa-blog-single">
                     <figure class="aa-blog-img">
-                      <a href="#"><img src="img/blog-img-3.jpg" alt="img"></a>
+                      <a href="#"><img src="{{asset('assets')}}/img/blog-img-3.jpg" alt="{{asset('assets')}}/img"></a>
                       <span class="aa-date-tag">15 April, 16</span>
                     </figure>
                     <div class="aa-blog-single-content">
@@ -762,6 +776,4 @@
   </section>
   <!-- / Latest blog -->
 
-
-
-@stop
+  @endsection
