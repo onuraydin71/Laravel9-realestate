@@ -120,9 +120,9 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="{{asset('assets')}}/vendors/images/photo1.jpg" alt="">
+							<img src="{{asset('assets')}}/vendors/images/photo11.jpg" alt="">
 						</span>
-						<span class="user-name">Ross C. Lopez</span>
+						<span class="user-name">Onur Aydın</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
@@ -133,7 +133,7 @@
 				</div>
 			</div>
 			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="{{asset('assets')}}/vendors/images/github.svg" alt=""></a>
+				<a href="https://github.com/onuraydin71" target="_blank"><img src="{{asset('assets')}}/vendors/images/github.svg" alt=""></a>
 			</div>
 		</div>
 	</div>
