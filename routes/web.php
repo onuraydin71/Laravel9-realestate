@@ -28,7 +28,6 @@ Route::get('/',[HomeController::class,'index']);
 
 Route::get('/deneme',[TestController::class,'deneme']);
 
-
 Route::prefix('admin')->name('admin.')->group(function () {
 
 Route::get('',[AdminHomeController::class,'index'])->name(name:'index');

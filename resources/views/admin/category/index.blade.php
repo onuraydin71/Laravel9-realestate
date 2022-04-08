@@ -42,7 +42,7 @@
 
 							
 							<h4 class="text-blue h4">Category List</h4>
-							<p>Add <code>.table  .table-bordered</code> for borders on all sides of the table and cells.</p>
+							<p>Add <code>.table  .table-bordered</code>for borders on all sides of the table and cells.</p>
 						</div>
 						<div class="pull-right">
 							

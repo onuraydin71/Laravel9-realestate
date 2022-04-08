@@ -86,8 +86,6 @@
 								
 							</tr>
 
-
-						
 					</table>
 					<div class="collapse collapse-box" id="striped-table">
 						<div class="code-box">
