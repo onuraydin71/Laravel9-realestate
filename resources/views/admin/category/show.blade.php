@@ -68,7 +68,8 @@
                             <tr>
 								<th style="width: 50px">Image</th>
 								
-								
+								<td><img src="{{Storage::url($data->image)}}" style="height: 40px"></td>
+									
 							</tr>
                             <tr>
 								<th style="width: 50px">Status</th>
