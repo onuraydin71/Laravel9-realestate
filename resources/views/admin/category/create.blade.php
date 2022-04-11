@@ -49,7 +49,7 @@
 						</div>
 						
 					</div>
-					<form role ="form" action="{{route('admin.category.store')}}" method="post">
+					<form role ="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
 						<div class="form-group">
 							<label>Title</label>
@@ -72,9 +72,14 @@
 					
 					
 						<div class="form-group">
-							<label>Image</label>
-							<input type="file" class="form-control-file form-control height-auto"
-                            name="image">
+							<label for="exampleInputFile">Image</label>
+							<div class="input-group">
+								<div class="custom-file">
+								<input type="file" class="custom-file-input" name="image">
+								<label class="custom-file-label" for="exampleInputFile">Choose image file</label>
+
+								</div>
+							</div>
 						</div>
 
                         <div class="form-group">

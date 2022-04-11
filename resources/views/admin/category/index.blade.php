@@ -70,7 +70,13 @@
 								<td>{{$rs->title}}</td>
 								<td>{{$rs->keywords}}</td>
 								<td>{{$rs->description}}</td>
-								<td>{{$rs->image}}</td>
+								<td>
+									@if ($rs->image)
+									<img src="{{Storage::url($rs->image)}}" style="height: 40px">
+									@endif
+									
+							
+								</td>
 								<td>{{$rs->status}}</td>
 								<td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"class="btn btn-dark">Edit </a> </td>
                                 <td><a href="{{route('admin.category.delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger">Delete</a></td>
