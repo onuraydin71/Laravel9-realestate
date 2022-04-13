@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Category List')
+@section('title','Product List')
 
  
 
@@ -14,7 +14,7 @@
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
 
-							<a href="{{route('admin.category.create')}}" class="btn btn-block btn-success btn-sm" style="width: 200px">Add Category</a>
+							<a href="{{route('admin.product.create')}}" class="btn btn-block btn-success btn-sm" style="width: 200px">Add Product</a>
 
 								
 							</div>
@@ -41,7 +41,7 @@
 						<div class="pull-left">
 
 							
-							<h4 class="text-blue h4">Category List</h4>
+							<h4 class="text-blue h4">Product List</h4>
 							<p>Add <code>.table  .table-bordered</code>for borders on all sides of the table and cells.</p>
 						</div>
 						<div class="pull-right">
@@ -52,8 +52,10 @@
 						<thead>
 							<tr>
 								<th style="width: 10px">Id</th>
-								<th>Parent</th>
+								<th>Category</th>
 								<th>Title</th>
+								<th>Price</th>
+								<th>Quantity</th>
 								<th>Image</th>
 								<th>Status</th>
 								<th style="width:40px">Edit</th>
@@ -70,6 +72,8 @@
 								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
 								</td>
 								<td>{{$rs->title}}</td>
+								<td>{{$rs->price}}</td>
+								<td>{{$rs->quantity}}</td>
 								
 								
 								<td>
@@ -80,9 +84,9 @@
 							
 								</td>
 								<td>{{$rs->status}}</td>
-								<td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"class="btn btn-dark">Edit </a> </td>
-                                <td><a href="{{route('admin.category.delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger">Delete</a></td>
-                                <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"class="btn btn-warning">Show </a></td>
+								<td><a href="{{route('admin.product.edit',['id'=>$rs->id])}}"class="btn btn-dark">Edit </a> </td>
+                                <td><a href="{{route('admin.product.delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger">Delete</a></td>
+                                <td><a href="{{route('admin.product.show',['id'=>$rs->id])}}"class="btn btn-warning">Show </a></td>
 								
 							<tr>
 							
