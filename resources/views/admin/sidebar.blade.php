@@ -114,9 +114,9 @@
                         </a>
                     </li>
 					<li>
-                        <a href="/admin/product" class="dropdown-toggle no-arrow">
+                        <a href="/admin/house" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-android-apps">  </span><span class="mtext">Products</span>
+                            <span class="icon-copy ion-android-apps">  </span><span class="mtext">Houses</span>
                         </a>
                     </li>
 					<li>

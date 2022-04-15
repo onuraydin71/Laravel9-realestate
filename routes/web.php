@@ -5,8 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
-use App\Http\Controllers\AdminPanel\AdminProductController;
 use App\Http\Controllers\AdminPanel\CategoryController;
+use App\Http\Controllers\AdminPanel\AdminHouseController;
+use App\Http\Controllers\AdminPanel\HouseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,8 +35,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 Route::get('',[AdminHomeController::class,'index'])->name(name:'index');
 
-//**********************ADMIN PRODUCT ROUTES**********************/
-Route::prefix('/product')->name('product.')->controller(AdminProductController::class)->group(function () {
+//**********************ADMIN HOUSE ROUTES**********************/
+Route::prefix('/house')->name('house.')->controller(AdminHouseController::class)->group(function () {
 
     Route::get('/','index')->name(name:'index');
     Route::get('/create','create')->name(name:'create');

@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Show Product:' .$data->title)
+@section('title','Show House:' .$data->title)
 
  
 
@@ -13,8 +13,8 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-							<a href="{{route('admin.product.edit',['id'=>$data->id])}}" class="btn btn-block btn-success btn-sm" style="width: 200px">Edit</a>
-                            <a href="{{route('admin.product.delete',['id'=>$data->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-block btn-success btn-sm" style="width: 200px">Delete</a>
+							<a href="{{route('admin.house.edit',['id'=>$data->id])}}" class="btn btn-block btn-success btn-sm" style="width: 200px">Edit</a>
+                            <a href="{{route('admin.house.delete',['id'=>$data->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-block btn-success btn-sm" style="width: 200px">Delete</a>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">

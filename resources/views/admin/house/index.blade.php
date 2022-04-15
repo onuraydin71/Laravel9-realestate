@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Product List')
+@section('title','House List')
 
  
 
@@ -14,7 +14,7 @@
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
 
-							<a href="{{route('admin.product.create')}}" class="btn btn-block btn-success btn-sm" style="width: 200px">Add Product</a>
+							<a href="{{route('admin.house.create')}}" class="btn btn-block btn-success btn-sm" style="width: 200px">Add House</a>
 
 								
 							</div>
@@ -41,7 +41,7 @@
 						<div class="pull-left">
 
 							
-							<h4 class="text-blue h4">Product List</h4>
+							<h4 class="text-blue h4">House List</h4>
 							<p>Add <code>.table  .table-bordered</code>for borders on all sides of the table and cells.</p>
 						</div>
 						<div class="pull-right">
@@ -84,9 +84,9 @@
 							
 								</td>
 								<td>{{$rs->status}}</td>
-								<td><a href="{{route('admin.product.edit',['id'=>$rs->id])}}"class="btn btn-dark">Edit </a> </td>
-                                <td><a href="{{route('admin.product.delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger">Delete</a></td>
-                                <td><a href="{{route('admin.product.show',['id'=>$rs->id])}}"class="btn btn-warning">Show </a></td>
+								<td><a href="{{route('admin.house.edit',['id'=>$rs->id])}}"class="btn btn-dark">Edit </a> </td>
+                                <td><a href="{{route('admin.house.delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger">Delete</a></td>
+                                <td><a href="{{route('admin.house.show',['id'=>$rs->id])}}"class="btn btn-warning">Show </a></td>
 								
 							<tr>
 							
