@@ -81,21 +81,100 @@
 							<label>Price</label>
 							<input class="form-control" type="number" name="price" value="{{$data->price}}">
 						</div>
+
+						<div class="form-group">
+                        <label>Property Type</label>
+                        <select class="custom-select col-12" name="propertytype" value="{{$data->propertytype}}">
+									<option selected="">Choose...</option>
+									<option >Apartment</option>
+									<option >Residence</option> 
+									<option >Detached house</option> 
+									<option >Villa</option> 
+									<option >Farm House</option> 
+									<option >Mansion</option> 
+									<option >Summery</option> 
+									<option >Prefabricated house</option> 
+									<option >Cooperative</option> 
+										
+								</select>
+                                </div>
+
+						<div class="form-group">
+							<label>m²</label>
+							<input class="form-control" type="number" name="metre" value="{{$data->metre}}">
+						</div>
+
+						<div class="form-group">
+							<label>Number Of Rooms</label>
+							<input class="form-control" type="number" name="numberofrooms" value="{{$data->numberofrooms}}">
+						</div>
+
+						<div class="form-group">
+							<label>Building Age</label>
+							<input class="form-control" type="number" name="buildingage" value="{{$data->buildingage}}">
+						</div>
+
+						<div class="form-group">
+							<label>Floor Location</label>
+							<input class="form-control" type="number" name="floorlocation" value="{{$data->floorlocation}}">
+						</div>
+
+						<div class="form-group">
+							<label>Number Of Floors</label>
+							<input class="form-control" type="number" name="numberoffloors" value="{{$data->numberoffloors}}">
+						</div>
+
+						<div class="form-group">
+							<label>Warm-up Type</label>
+							<input class="form-control" type="text" name="warmuptype" placeholder="Warm-up Type" value="{{$data->warmup}}">
+						</div>
+
+						<div class="form-group">
+							<label>Number Of Bathrooms</label>
+							<input class="form-control" type="number" name="numberofbathrooms" value="{{$data->numberofbathrooms}}">
+						</div>
+
+						<div class="form-group">
+                        <label>Balcony</label>
+                        <select class="custom-select col-12" name="balcony">
+									<option selected="">Choose...</option>
+									<option >Yes</option>
+									<option >No</option> 
+									
+								</select>
+                                </div>
+
+								<div class="form-group">
+                        <label>Furnished</label>
+                        <select class="custom-select col-12" name="furnished">
+									<option selected="">Choose...</option>
+									<option >Yes</option>
+									<option >No</option> 
+									
+								</select>
+                                </div>
 						
+								<div class="form-group">
+							<label>Using Status</label>
+							<input class="form-control" type="text" name="usingstatus" placeholder="Using Status">
+						</div>		
+
 						<div class="form-group">
-							<label>Quantity</label>
-							<input class="form-control" type="number" name="quantity" value="{{$data->quantity}}">
+							<label>Dues</label>
+							<input class="form-control" type="number" name="dues" value="{{$data->dues}}">
 						</div>
 
 						<div class="form-group">
-							<label>Minimum Quantity</label>
-							<input class="form-control" type="number" name="minquantity" value="{{$data->minquantity}}">
-						</div>
-
-						<div class="form-group">
-							<label>Tax %</label>
-							<input class="form-control" type="number" name="tax" value="{{$data->tax}}">
-						</div>
+                        <label>Swap</label>
+                        <select class="custom-select col-12" name="swap">
+									<option selected="">Choose...</option>
+									<option >Yes</option>
+									<option >No</option> 
+									
+								</select>
+                                </div>	
+						
+					
 						
 						<div class="form-group">
 							<label>Detail</label>
@@ -120,8 +199,8 @@
                         <label>Status</label>
                         <select class="custom-select col-12" name="status">
                                     <option selected=>True</option>
-                                    <option value="1">True</option>
-                                    <option value="2">False</option> 
+                                    <option >True</option>
+                                    <option >False</option> 
 
                                 </select>
                                 </div>

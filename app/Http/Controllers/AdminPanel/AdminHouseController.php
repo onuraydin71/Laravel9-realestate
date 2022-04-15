@@ -62,9 +62,19 @@ class AdminHouseController extends Controller
         $data->description = $request->description;
         $data->detail = $request->detail;
         $data->price = $request->price;
-        $data->quantity = $request->quantity;
-        $data->minquantity = $request->minquantity;
-        $data->tax = $request->tax;
+        $data->metre = $request->metre;
+        $data->numberofrooms = $request->numberofrooms;
+        $data->buildingage = $request->buildingage;
+        $data->floorlocation = $request->floorlocation;
+        $data->numberoffloors = $request->numberoffloors;
+        $data->warmuptype = $request->warmup;
+        $data->numberofbathrooms = $request->numberofbathrooms;
+        $data->balcony = $request->balcony;
+        $data->furnished = $request->furnished;
+        $data->usingstatus = $request->usingstatus;
+        $data->dues = $request->dues;
+        $data->swap = $request->swap;
+        $data->propertytype = $request->propertytype;
         $data->status = $request->status;
         if ($request->file('image')){
             $data->image= $request->file('image')->store('images');
@@ -122,10 +132,20 @@ class AdminHouseController extends Controller
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->detail = $request->detail;
-        $data->price = $request->proc_nice;
-        $data->quantity = $request->quantity;
-        $data->minquantity = $request->minquantity;
-        $data->tax = $request->tax;
+        $data->price = $request->price;
+        $data->metre = $request->metre;
+        $data->numberofrooms = $request->numberofrooms;
+        $data->buildingage = $request->buildingage;
+        $data->floorlocation = $request->floorlocation;
+        $data->numberoffloors = $request->numberoffloors;
+        $data->warmuptype = $request->warmup;
+        $data->numberofbathrooms = $request->numberofbathrooms;
+        $data->balcony = $request->balcony;
+        $data->furnished = $request->furnished;
+        $data->usingstatus = $request->usingstatus;
+        $data->dues = $request->dues;
+        $data->swap = $request->swap;
+        $data->propertytype = $request->propertytype;
         $data->status = $request->status;
         if ($request->file('image')){
             $data->image= $request->file('image')->store('images');

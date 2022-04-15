@@ -90,15 +90,15 @@
                         <label>Property Type</label>
                         <select class="custom-select col-12" name="propertytype">
 									<option selected="">Choose...</option>
-									<option value="1">Apartment</option>
-									<option value="2">Residence</option> 
-									<option value="3">Detached house</option> 
-									<option value="4">Villa</option> 
-									<option value="5">Farm House</option> 
-									<option value="6">Mansion</option> 
-									<option value="7">Summery</option> 
-									<option value="8">Prefabricated house</option> 
-									<option value="9">Cooperative</option> 
+									<option >Apartment</option>
+									<option >Residence</option> 
+									<option >Detached house</option> 
+									<option >Villa</option> 
+									<option >Farm House</option> 
+									<option >Mansion</option> 
+									<option >Summery</option> 
+									<option >Prefabricated house</option> 
+									<option >Cooperative</option> 
 										
 								</select>
                                 </div>
@@ -130,7 +130,7 @@
 
 						<div class="form-group">
 							<label>Warm-up Type</label>
-							<input class="form-control" type="text" name="warm-up" placeholder="Description">
+							<input class="form-control" type="text" name="warmuptype" placeholder="Warm-up Type">
 						</div>
 
 						<div class="form-group">
@@ -142,8 +142,8 @@
                         <label>Balcony</label>
                         <select class="custom-select col-12" name="balcony">
 									<option selected="">Choose...</option>
-									<option value="1">Yes</option>
-									<option value="2">No</option> 
+									<option>Yes</option>
+									<option>No</option> 
 									
 								</select>
                                 </div>
@@ -152,15 +152,15 @@
                         <label>Furnished</label>
                         <select class="custom-select col-12" name="furnished">
 									<option selected="">Choose...</option>
-									<option value="1">Yes</option>
-									<option value="2">No</option> 
+									<option >Yes</option>
+									<option >No</option> 
 									
 								</select>
                                 </div>
 						
 								<div class="form-group">
 							<label>Using Status</label>
-							<input class="form-control" type="text" name="usingstatus" placeholder="Description">
+							<input class="form-control" type="text" name="usingstatus" placeholder="Using Status">
 						</div>		
 
 						<div class="form-group">
@@ -172,8 +172,8 @@
                         <label>Swap</label>
                         <select class="custom-select col-12" name="swap">
 									<option selected="">Choose...</option>
-									<option value="1">Yes</option>
-									<option value="2">No</option> 
+									<option >Yes</option>
+									<option >No</option> 
 									
 								</select>
                                 </div>
@@ -204,8 +204,8 @@
                         <label>Status</label>
                         <select class="custom-select col-12" name="status">
 									<option selected="">Choose...</option>
-									<option value="1">True</option>
-									<option value="2">False</option> 
+									<option >True</option>
+									<option >False</option> 
 									
 								</select>
                                 </div>

@@ -99,8 +99,8 @@
                         <label>Status</label>
                         <select class="custom-select col-12" name="status">
 									<option selected="">Choose...</option>
-									<option value="1">True</option>
-									<option value="2">False</option> 
+									<option >True</option>
+									<option >False</option> 
 									
 								</select>
                                 </div>

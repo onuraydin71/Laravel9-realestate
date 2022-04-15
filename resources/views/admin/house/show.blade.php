@@ -51,15 +51,15 @@
 					<table class="table table-striped">
 						
 							<tr>
-								<th style="width: 200px">Id</th>
+								<th style="width: 250px">Id</th>
 								<td>{{$data->id}}</td>
 								
 							</tr>
 							<tr>
 								<th style="width: 50px">Category</th>
 								<td>
-								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category,$data->category->title)}}
-									
+								
+								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data,$data->title)}}
 								</td>
 								
 							</tr>
@@ -84,20 +84,71 @@
 								
 							</tr>
 							<tr>
-								<th style="width: 50px">Quantity</th>
-								<td>{{$data->quantity}}</td>
+								<th style="width: 50px">Property Type</th>
+								<td>{{$data->propertytype}}</td>
 								
 							</tr>
 							<tr>
-								<th style="width: 50px">Minimum quantity</th>
-								<td>{{$data->minquantity}}</td>
+								<th style="width: 50px">m²</th>
+								<td>{{$data->metre}}</td>
 								
 							</tr>
 							<tr>
-								<th style="width: 50px">Tax</th>
-								<td>{{$data->tax}}</td>
+								<th style="width: 50px">Number Of Rooms</th>
+								<td>{{$data->numberofrooms}}</td>
 								
 							</tr>
+							<tr>
+								<th style="width: 50px">Building Age</th>
+								<td>{{$data->buildingage}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Floor Location</th>
+								<td>{{$data->floorlocation}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Number Of Floors</th>
+								<td>{{$data->numberoffloors}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Warm-up Type</th>
+								<td>{{$data->warmuptype}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Number Of Bathrooms</th>
+								<td>{{$data->numberofbathrooms}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Balcony</th>
+								<td>{{$data->balcony}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Furnished</th>
+								<td>{{$data->furnished}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Using Status</th>
+								<td>{{$data->usingstatus}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Dues</th>
+								<td>{{$data->dues}}</td>
+								
+							</tr>
+							<tr>
+								<th style="width: 50px">Swap</th>
+								<td>{{$data->swap}}</td>
+								
+							</tr>
+
 							<tr>
 								<th style="width: 50px">Detail</th>
 								<td>{{$data->detail}}</td>

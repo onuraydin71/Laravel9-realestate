@@ -42,7 +42,6 @@
 
 							
 							<h4 class="text-blue h4">House List</h4>
-							<p>Add <code>.table  .table-bordered</code>for borders on all sides of the table and cells.</p>
 						</div>
 						<div class="pull-right">
 							
@@ -55,7 +54,10 @@
 								<th>Category</th>
 								<th>Title</th>
 								<th>Price</th>
-								<th>Quantity</th>
+								<th>Property Type</th>
+								<th>m²</th>
+								<th>Number Of Rooms</th>
+								<th>Using Status</th>
 								<th>Image</th>
 								<th>Status</th>
 								<th style="width:40px">Edit</th>
@@ -69,13 +71,14 @@
 							<tr>
 								<td>{{$rs->id}}</td>
 								<td>
-								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}
+								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
 								</td>
 								<td>{{$rs->title}}</td>
 								<td>{{$rs->price}}</td>
-								<td>{{$rs->quantity}}</td>
-								
-								
+								<td>{{$rs->propertytype}}</td>
+								<td>{{$rs->metre}}</td>
+								<td>{{$rs->numberofrooms}}</td>
+								<td>{{$rs->usingstatus}}</td>
 								<td>
 									@if ($rs->image)
 									<img src="{{Storage::url($rs->image)}}" style="height: 40px">
