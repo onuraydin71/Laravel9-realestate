@@ -67,7 +67,7 @@ class AdminHouseController extends Controller
         $data->buildingage = $request->buildingage;
         $data->floorlocation = $request->floorlocation;
         $data->numberoffloors = $request->numberoffloors;
-        $data->warmuptype = $request->warmup;
+        $data->warmuptype = $request->warmuptype;
         $data->numberofbathrooms = $request->numberofbathrooms;
         $data->balcony = $request->balcony;
         $data->furnished = $request->furnished;
@@ -138,7 +138,7 @@ class AdminHouseController extends Controller
         $data->buildingage = $request->buildingage;
         $data->floorlocation = $request->floorlocation;
         $data->numberoffloors = $request->numberoffloors;
-        $data->warmuptype = $request->warmup;
+        $data->warmuptype = $request->warmuptype;
         $data->numberofbathrooms = $request->numberofbathrooms;
         $data->balcony = $request->balcony;
         $data->furnished = $request->furnished;

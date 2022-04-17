@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControlle
 use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\AdminPanel\AdminHouseController;
 use App\Http\Controllers\AdminPanel\HouseController;
+use App\Http\Controllers\AdminPanel\ImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +59,14 @@ Route::post('/update/{id}','update')->name(name:'update');
 Route::get('/show/{id}','show')->name(name:'show');
 Route::get('/delete/{id}','destroy')->name(name:'delete');
     });
+
+//**********************ADMIN IMAGE ROUTES**********************/
+Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+
+    Route::get('/{pid}','index')->name(name:'index');
+    Route::post('/store/{pid}','store')->name(name:'store');
+    Route::get('/delete/{pid}/{id}','destroy')->name(name:'delete');
+        });    
 
 
 });

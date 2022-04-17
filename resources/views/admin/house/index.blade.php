@@ -57,8 +57,8 @@
 								<th>Property Type</th>
 								<th>m²</th>
 								<th>Number Of Rooms</th>
-								<th>Using Status</th>
 								<th>Image</th>
+								<th>Image Gallery</th>
 								<th>Status</th>
 								<th style="width:40px">Edit</th>
 								<th style="width:40px">Delete</th>
@@ -78,13 +78,15 @@
 								<td>{{$rs->propertytype}}</td>
 								<td>{{$rs->metre}}</td>
 								<td>{{$rs->numberofrooms}}</td>
-								<td>{{$rs->usingstatus}}</td>
 								<td>
 									@if ($rs->image)
 									<img src="{{Storage::url($rs->image)}}" style="height: 40px">
 									@endif
-									
-							
+								</td>
+								<td> <a href="{{route('admin.image.index',['pid'=>$rs->id])}}"
+								onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+								<img src="{{asset('assets')}}/admin/img/gallery.png" style="height: 40px">
+								</a>
 								</td>
 								<td>{{$rs->status}}</td>
 								<td><a href="{{route('admin.house.edit',['id'=>$rs->id])}}"class="btn btn-dark">Edit </a> </td>
@@ -102,20 +104,6 @@
 								<a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left" data-clipboard-target="#border-table-code"><i class="fa fa-clipboard"></i> Copy Code</a>
 								<a href="#border-table" class="btn btn-primary btn-sm pull-right" rel="content-y" data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
 							</div>
-							<pre><code class="xml copy-pre hljs" id="border-table-code">
-<span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table table-bordered"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>#<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"row"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
-							</code></pre>
 						</div>
 					</div>
 				</div>
