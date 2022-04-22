@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string(column:'keywords')->nullable();
             $table->string(column:'description')->nullable();
             $table->string(column:'image')->nullable();
-            $table->string(column:'detail')->nullable();
+            $table->text(column:'detail')->nullable();
             $table->bigInteger(column:'price')->nullable();
             $table->integer(column:'metre')->nullable();
             $table->integer(column:'numberofrooms')->nullable();

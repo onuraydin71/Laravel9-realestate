@@ -2,7 +2,10 @@
 
 @section('title','Edit House')
 
- 
+@section('head')
+ <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+ @endsection
+
 
   @section('content')
 
@@ -178,9 +181,19 @@
 						
 						<div class="form-group">
 							<label>Detail</label>
-							<textarea class="form-control" name="detail" value="{{$data->detail}}">
+							<textarea class="form-control" id="detail" name="detail" value="{{$data->detail}}">
 
 							</textarea>
+							<script>
+                        ClassicEditor
+                                .create( document.querySelector( '#detail' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                </script>
 						</div>
 
 

@@ -151,7 +151,7 @@
 
 							<tr>
 								<th style="width: 50px">Detail</th>
-								<td>{{$data->detail}}</td>
+								<td>{!! $data->detail !!}</td>
 								
 							</tr>
                             <tr>
