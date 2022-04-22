@@ -76,8 +76,13 @@ class AdminHouseController extends Controller
         $data->swap = $request->swap;
         $data->propertytype = $request->propertytype;
         $data->status = $request->status;
-        if ($request->file('image')){
-            $data->image= $request->file('image')->store('images');
+        if ($request->hasFile('image')){
+           
+            $file= $request->file('image');
+            $extention= $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $file->move('storage/img/',$filename);
+            $data->image= $filename;
         }
         $data->save();
 
@@ -147,8 +152,13 @@ class AdminHouseController extends Controller
         $data->swap = $request->swap;
         $data->propertytype = $request->propertytype;
         $data->status = $request->status;
-        if ($request->file('image')){
-            $data->image= $request->file('image')->store('images');
+        if ($request->hasFile('image')){
+           
+            $file= $request->file('image');
+            $extention= $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $file->move('storage/img/',$filename);
+            $data->image= $filename;
         }
         $data->save();
         return redirect ('admin/house');

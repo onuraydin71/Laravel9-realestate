@@ -80,7 +80,7 @@
 								<td>{{$rs->numberofrooms}}</td>
 								<td>
 									@if ($rs->image)
-									<img src="{{Storage::url($rs->image)}}" style="height: 40px">
+									<img src="{{ asset('storage/img/'.$rs->image)}}" style="height: 40px">
 									@endif
 								</td>
 								<td> <a href="{{route('admin.image.index',['pid'=>$rs->id])}}"

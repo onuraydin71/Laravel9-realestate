@@ -90,15 +90,15 @@
 					<li>
                         <a href="/admin" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-android-home">  </span><span class="mtext">Dashboard</span>
+                            <span class="micon icon-copy ion-cube">  </span><span class="mtext">Dashboard</span>
                         </a>
                     </li>
 
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 						
-							<span class="icon-copy ion-ios-box">  </span><span class="mtext">Orders</span>
-						</a>
+							<span class="micon icon-copy ion-ios-box">  </span><span class="mtext">Orders</span>
+						</a> 
 						<ul class="submenu">
 							<li><a href="index.html">New Orders</a></li>
 							<li><a href="index2.html">Accepted Orders</a></li>
@@ -110,42 +110,42 @@
 					<li>
                         <a href="/admin/category" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-android-apps">  </span><span class="mtext">Categories</span>
+                            <span class="micon icon-copy ion-android-apps">  </span><span class="mtext">Categories</span>
                         </a>
                     </li>
 					<li>
                         <a href="/admin/house" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-android-apps">  </span><span class="mtext">Houses</span>
+                            <span class="micon icon-copy ion-android-home">  </span><span class="mtext">Houses</span>
                         </a>
                     </li>
 					<li>
                         <a href="/admin/comment" class="dropdown-toggle no-arrow">
-                            <span class="icon-copy ion-chatbox-working">  </span><span class="mtext">Comments</span>
+                            <span class="micon icon-copy ion-chatbox-working">  </span><span class="mtext">Comments</span>
                         </a>
                     </li>
 					<li>
                         <a href="/admin/faq" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-help">  </span><span class="mtext">FAQ</span>
+                            <span class="micon icon-copy ion-help">  </span><span class="mtext">FAQ</span>
                         </a>
                     </li>
 					<li>
                         <a href="/admin/messages" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-ios-email">  </span><span class="mtext">Messages</span>
+                            <span class="micon icon-copy ion-ios-email">  </span><span class="mtext">Messages</span>
                         </a>
                     </li>
 					<li>
                         <a href="/admin/user" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-person">  </span><span class="mtext">Users</span>
+                            <span class="micon icon-copy ion-person">  </span><span class="mtext">Users</span>
                         </a>
                     </li>
 					<li>
                         <a href="/admin/social" class="dropdown-toggle no-arrow">
 						
-                            <span class="icon-copy ion-social-twitter">  </span><span class="mtext">Social</span>
+                            <span class="micon icon-copy ion-social-twitter">  </span><span class="mtext">Social</span>
                         </a>
                     </li>
 					
@@ -159,7 +159,7 @@
                     <li>
                         <a href="admin/setting" class="dropdown-toggle no-arrow">
 						
-						<span class="icon-copy ion-gear-a">  </span><span class="mtext">Settings</span>
+						<span class="micon icon-copy ion-gear-a">  </span><span class="mtext">Settings</span>
                         </a>
 
                     </li>

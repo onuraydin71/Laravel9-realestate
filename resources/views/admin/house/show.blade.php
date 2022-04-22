@@ -157,7 +157,7 @@
                             <tr>
 								<th style="width: 50px">Image</th>
 								
-								<td><img src="{{Storage::url($data->image)}}" style="height: 40px"></td>
+								<td><img src="{{ asset('storage/img/'.$data->image)}}" style="height: 40px"></td>
 									
 							</tr>
                             <tr>

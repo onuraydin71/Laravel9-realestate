@@ -39,8 +39,13 @@ class ImageController extends Controller
         $data= new Image();
         $data->house_id= $pid;
         $data->title = $request->title;
-        if ($request->file('image')){
-            $data->image= $request->file('image')->store('images');
+        if ($request->hasFile('image')){
+           
+            $file= $request->file('image');
+            $extention= $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $file->move('storage/img/',$filename);
+            $data->image= $filename;
         }
         $data->save();
 

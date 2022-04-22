@@ -73,8 +73,10 @@
 								
 								<td>
 									@if ($rs->image)
-									<img src="{{Storage::url($rs->image)}}" style="height: 40px" >
+									<img src="{{ asset('storage/img/'.$rs->image)}} " style="height: 40px" >
 									@endif
+									
+									
 							
 								</td>
 								<td>{{$rs->status}}</td>
