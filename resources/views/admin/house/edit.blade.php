@@ -182,7 +182,7 @@
 						<div class="form-group">
 							<label>Detail</label>
 							<textarea class="form-control" id="detail" name="detail" value="{{$data->detail}}">
-
+							<td>{!! $data->detail !!}</td>
 							</textarea>
 							<script>
                         ClassicEditor
