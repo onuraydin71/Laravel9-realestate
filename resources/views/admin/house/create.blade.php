@@ -104,6 +104,10 @@
 										
 								</select>
                                 </div>
+						<div class="form-group">
+							<label>Location</label>
+							<input class="form-control" type="text" name="location" placeholder="Location">
+						</div>
 
 						<div class="form-group">
 							<label>m²</label>

@@ -103,6 +103,11 @@
                                 </div>
 
 						<div class="form-group">
+							<label>Location</label>
+							<input class="form-control" type="text" name="location" value="{{$data->location}}">
+						</div>
+
+						<div class="form-group">
 							<label>m²</label>
 							<input class="form-control" type="number" name="metre" value="{{$data->metre}}">
 						</div>
@@ -129,7 +134,7 @@
 
 						<div class="form-group">
 							<label>Warm-up Type</label>
-							<input class="form-control" type="text" name="warmuptype" placeholder="Warm-up Type" value="{{$data->warmup}}">
+							<input class="form-control" type="text" name="warmuptype" value="{{$data->warmuptype}}">
 						</div>
 
 						<div class="form-group">
@@ -139,7 +144,7 @@
 
 						<div class="form-group">
                         <label>Balcony</label>
-                        <select class="custom-select col-12" name="balcony">
+                        <select class="custom-select col-12" name="balcony" value="{{$data->balcony}}">
 									<option selected="">Choose...</option>
 									<option >Yes</option>
 									<option >No</option> 
@@ -149,7 +154,7 @@
 
 								<div class="form-group">
                         <label>Furnished</label>
-                        <select class="custom-select col-12" name="furnished">
+                        <select class="custom-select col-12" name="furnished" value="{{$data->furnished}}">
 									<option selected="">Choose...</option>
 									<option >Yes</option>
 									<option >No</option> 
@@ -159,7 +164,7 @@
 						
 								<div class="form-group">
 							<label>Using Status</label>
-							<input class="form-control" type="text" name="usingstatus" placeholder="Using Status">
+							<input class="form-control" type="text" name="usingstatus" value="{{$data->usingstatus}}">
 						</div>		
 
 						<div class="form-group">

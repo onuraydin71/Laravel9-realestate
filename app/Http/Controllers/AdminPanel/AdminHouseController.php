@@ -75,6 +75,7 @@ class AdminHouseController extends Controller
         $data->dues = $request->dues;
         $data->swap = $request->swap;
         $data->propertytype = $request->propertytype;
+        $data->location = $request->location;
         $data->status = $request->status;
         if ($request->hasFile('image')){
            
@@ -151,6 +152,7 @@ class AdminHouseController extends Controller
         $data->dues = $request->dues;
         $data->swap = $request->swap;
         $data->propertytype = $request->propertytype;
+        $data->location = $request->location;
         $data->status = $request->status;
         if ($request->hasFile('image')){
            

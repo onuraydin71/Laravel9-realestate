@@ -89,6 +89,11 @@
 								
 							</tr>
 							<tr>
+								<th style="width: 50px">Location</th>
+								<td>{{$data->location}}</td>
+								
+							</tr>
+							<tr>
 								<th style="width: 50px">m²</th>
 								<td>{{$data->metre}}</td>
 								

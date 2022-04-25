@@ -10,7 +10,6 @@
   
 
  
-
   <!-- Pre Loader -->
   <div id="aa-preloader-area">
     <div class="pulse"></div>
@@ -18,7 +17,9 @@
   <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
 
   <!-- Advance Search -->
   <section id="aa-advance-search">
@@ -32,6 +33,7 @@
                   <input type="text" placeholder="Type Your Location">
                 </div>
               </div>
+              
               <div class="col-md-2">
                 <div class="aa-single-advance-search">
                   <select>
@@ -43,61 +45,40 @@
                   </select>
                 </div>
               </div>
+
               <div class="col-md-2">
-                 <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
+                <div class="aa-single-advance-search">
+                  <input type="text" placeholder="Min-Price">
+                </div>
               </div>
-              </div>
+
               <div class="col-md-2">
-                 <div class="aa-single-advance-search">
-                  <select>
-                    <option value="0" selected>Type</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
+                <div class="aa-single-advance-search">
+                  <input type="text" placeholder="Max-Price">
+                </div>
               </div>
-              </div>
+              
               <div class="col-md-2">
                 <div class="aa-single-advance-search">
                   <input class="aa-search-btn" type="submit" value="Search">
                 </div>
               </div>
+             
+              <div class="aa-advance-search-bottom">
+           <div class="row">
+            <div class="col-md-4">
+            <div class="aa-single-advance-search">
+                  <h1></h1>
+                </div>
+              </div>
+              <div class="col-md-6">
+            <div class="aa-single-advance-search">
+                  <h1><p style="color:DodgerBlue  ;font-family:Playfair Display;font-weight:bold;font-size:160%">Home Showcase</p></h1>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
-         <div class="aa-advance-search-bottom">
-           <div class="row">
-            <div class="col-md-6">
-              <div class="aa-single-filter-search">
-                <span>AREA (SQ)</span>
-                <span>FROM</span>
-                <span id="skip-value-lower" class="example-val">30.00</span>
-                <span>TO</span>
-                <span id="skip-value-upper" class="example-val">100.00</span>
-                <div id="aa-sqrfeet-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                </div>                  
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="aa-single-filter-search">
-                <span>PRICE ($)</span>
-                <span>FROM</span>
-                <span id="skip-value-lower2" class="example-val">30.00</span>
-                <span>TO</span>
-                <span id="skip-value-upper2" class="example-val">100.00</span>
-                <div id="aa-price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                </div>      
-              </div>
-            </div>
-          </div>  
-         </div>
         </div>
       </div>
     </div>
@@ -106,228 +87,53 @@
 
 
 
-  <!-- About us -->
-  <section id="aa-about-us">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-about-us-area">
-            <div class="row">
-              <div class="col-md-5">
-                <div class="aa-about-us-left">
-                  <img src="{{asset('assets')}}/img/about-us.png" alt="image">
-                </div>
-              </div>
-              <div class="col-md-7">
-                <div class="aa-about-us-right">
-                  <div class="aa-title">
-                    <h2>About Us</h2>
-                    <span></span>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat ab dignissimos vitae maxime adipisci blanditiis rerum quae quos! Id at rerum maxime modi fugit vero corrupti, ad atque sit laborum ipsum sunt blanditiis suscipit odio, aut nostrum assumenda nobis rem a maiores temporibus non commodi laboriosam, doloremque expedita! Corporis, provident?</p>                  
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>                    
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / About us -->
 
   <!-- Latest property -->
   <section id="aa-latest-property">
     <div class="container">
       <div class="aa-latest-property-area">
         <div class="aa-title">
-          <h2>Latest Properties</h2>
-          <span></span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>         
         </div>
         <div class="aa-latest-properties-content">
           <div class="row">
+            
+          @foreach($houselist as $rs)
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="{{asset('assets')}}/img/item/1.jpg" alt="{{asset('assets')}}/img">
+                  <img src="{{ asset('storage/img/'.$rs->image)}}" alt="">
                 </a>
                 <div class="aa-tag for-sale">
                   For Sale
                 </div>
                 <div class="aa-properties-item-content">
                   <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
+                    <span>{{$rs->numberofrooms}} Rooms</span>
+                    <span>{{$rs->numberofbathrooms}} Baths</span>
+                    <span>{{$rs->metre}} SQ FT</span>
                   </div>
                   <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
+                    <h3><a href="#">{{$rs->title}}</a></h3>
+                    <p>{{$rs->description}}</p>                      
                   </div>
                   <div class="aa-properties-detial">
                     <span class="aa-price">
-                      $35000
+                    ${{$rs->price}}
                     </span>
                     <a href="#" class="aa-secondary-btn">View Details</a>
                   </div>
                 </div>
               </article>
             </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="{{asset('assets')}}/img/item/2.jpg" alt="{{asset('assets')}}/img">
-                </a>
-                <div class="aa-tag for-rent">
-                  For Rent
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $11000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="{{asset('assets')}}/img/item/3.jpg" alt="{{asset('assets')}}/img">
-                </a>
-                <div class="aa-tag sold-out">
-                  Sold Out
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $15000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="{{asset('assets')}}/img/item/4.jpg" alt="{{asset('assets')}}/img">
-                </a>
-                <div class="aa-tag for-sale">
-                  For Sale
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $35000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="{{asset('assets')}}/img/item/5.jpg" alt="{{asset('assets')}}/img">
-                </a>                
-                <div class="aa-tag sold-out">
-                  Sold Out
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $11000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="{{asset('assets')}}/img/item/6.jpg" alt="{{asset('assets')}}/img">
-                </a>
-                <div class="aa-tag for-rent">
-                  For Rent
-                </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>5 Rooms</span>
-                    <span>2 Beds</span>
-                    <span>3 Baths</span>
-                    <span>1100 SQ FT</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">Appartment Title</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae vero ducimus quibusdam odit vitae.</p>                      
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      $15000
-                    </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
-                  </div>
-                </div>
-              </article>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- / Latest property -->
+
+
 
   <!-- Service section -->
   <section id="aa-service">
@@ -396,24 +202,9 @@
   </section>
   <!-- / Service section -->
 
-  <!-- Promo Banner Section -->
-  <section id="aa-promo-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-promo-banner-area">
-            <h3>Find Your Best Property</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ex illum corporis quibusdam numquam quisquam optio explicabo. Officiis odit quia odio dignissimos eius repellat id!</p>
-            <a href="#" class="aa-view-btn">View Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / Promo Banner Section -->
 
-  <!-- Our Agent Section-->
-  <section id="aa-agents">
+ <!-- Our Agent Section-->
+ <section id="aa-agents">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -570,202 +361,33 @@
     </div>
   </section>
   <!-- / Our Agent Section-->
-
-  <!-- Client Testimonial -->
-  <section id="aa-client-testimonial">
+  <!-- About us -->
+  <section id="aa-about-us">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="aa-client-testimonial-area">
-            <div class="aa-title">
-              <h2>What Client Say</h2>
-              <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eaque quas debitis animi ipsum, veritatis!</p>
-            </div>
-            <!-- testimonial content -->
-            <div class="aa-testimonial-content">
-              <!-- testimonial slider -->
-              <ul class="aa-testimonial-slider">
-                <li>
-                  <div class="aa-testimonial-single">
-                    <div class="aa-testimonial-img">
-                      <img src="{{asset('assets')}}/img/testimonial-1.png" alt="testimonial img">
-                    </div>
-                    <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                    </div>
-                    <div class="aa-testimonial-bio">
-                      <p>David Muller</p>
-                      <span>Web Designer</span>
-                    </div>
+          <div class="aa-about-us-area">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="aa-about-us-left">
+                  <img src="{{asset('assets')}}/img/about-us.png" alt="image">
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="aa-about-us-right">
+                  <div class="aa-title">
+                    <h2>About Us</h2>
+                    <span></span>
                   </div>
-                </li>
-                 <li>
-                  <div class="aa-testimonial-single">
-                    <div class="aa-testimonial-img">
-                      <img src="{{asset('assets')}}/img/testimonial-3.png" alt="testimonial img">
-                    </div>
-                    <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                    </div>
-                    <div class="aa-testimonial-bio">
-                      <p>David Muller</p>
-                      <span>Web Designer</span>
-                    </div>
-                  </div>
-                </li>
-                 <li>
-                  <div class="aa-testimonial-single">
-                    <div class="aa-testimonial-img">
-                      <img src="{{asset('assets')}}/img/testimonial-2.png" alt="testimonial img">
-                    </div>
-                    <div class="aa-testimonial-info">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
-                    </div>
-                    <div class="aa-testimonial-bio">
-                      <p>David Muller</p>
-                      <span>Web Designer</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Client Testimonial -->
-
-  <!-- Client brand -->
-  <section id="aa-client-brand">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-client-brand-area">
-            <ul class="aa-client-brand-slider">
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-1.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-2.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-3.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-5.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-4.png" alt="brand image">
-                </div>
-              </li>
-               <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-1.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-2.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-3.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-5.png" alt="brand image">
-                </div>
-              </li>
-              <li>
-                <div class="aa-client-single-brand">
-                  <img src="{{asset('assets')}}/img/client-brand-4.png" alt="brand image">
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / Client brand -->
-
-  <!-- Latest blog -->
-  <section id="aa-latest-blog">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-latest-blog-area">
-            <div class="aa-title">
-              <h2>Latest News</h2>
-              <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe magni, est harum repellendus. Accusantium, nostrum!</p>
-            </div>
-            <div class="aa-latest-blog-content">
-              <div class="row">
-                <!-- start single blog -->
-                <div class="col-md-4">
-                  <article class="aa-blog-single">
-                    <figure class="aa-blog-img">
-                      <a href="#"><img src="{{asset('assets')}}/img/blog-img-1.jpg" alt="{{asset('assets')}}/img"></a>
-                      <span class="aa-date-tag">15 April, 16</span>
-                    </figure>
-                    <div class="aa-blog-single-content">
-                      <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                      <div class="aa-blog-single-bottom">
-                        <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                        <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                      </div>
-                    </div>
-                   
-                  </article>
-                </div>
-                <!-- start single blog -->
-                <div class="col-md-4">
-                  <article class="aa-blog-single">
-                    <figure class="aa-blog-img">
-                      <a href="#"><img src="{{asset('assets')}}/img/blog-img-2.jpg" alt="{{asset('assets')}}/img"></a>
-                      <span class="aa-date-tag">15 April, 16</span>
-                    </figure>
-                    <div class="aa-blog-single-content">
-                      <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                      <div class="aa-blog-single-bottom">
-                        <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                        <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                      </div>
-                    </div>                   
-                  </article>
-                </div>
-                <!-- start single blog -->
-                <div class="col-md-4">
-                  <article class="aa-blog-single">
-                    <figure class="aa-blog-img">
-                      <a href="#"><img src="{{asset('assets')}}/img/blog-img-3.jpg" alt="{{asset('assets')}}/img"></a>
-                      <span class="aa-date-tag">15 April, 16</span>
-                    </figure>
-                    <div class="aa-blog-single-content">
-                      <h3><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est quaerat magnam exercitationem voluptas, voluptatem sed quam ab laborum voluptatum tempore dolores itaque, molestias vitae.</p>
-                      <div class="aa-blog-single-bottom">
-                        <a href="#" class="aa-blog-author"><i class="fa fa-user"></i> Admin</a>
-                        <a href="#" class="aa-blog-comments"><i class="fa fa-comment-o"></i>6</a>
-                      </div>
-                    </div>                   
-                  </article>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat ab dignissimos vitae maxime adipisci blanditiis rerum quae quos! Id at rerum maxime modi fugit vero corrupti, ad atque sit laborum ipsum sunt blanditiis suscipit odio, aut nostrum assumenda nobis rem a maiores temporibus non commodi laboriosam, doloremque expedita! Corporis, provident?</p>                  
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>                    
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -774,6 +396,5 @@
       </div>
     </div>
   </section>
-  <!-- / Latest blog -->
-
+  <!-- / About us -->
   @endsection

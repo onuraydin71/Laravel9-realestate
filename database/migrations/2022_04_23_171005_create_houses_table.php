@@ -36,6 +36,7 @@ return new class extends Migration
             $table->integer(column:'dues')->nullable();
             $table->string(column:'swap')->nullable();
             $table->string(column:'propertytype')->nullable();
+            $table->string(column:'location')->nullable();
             $table->string(column:'status', length:6)->default('False');
             $table->timestamps();
         });

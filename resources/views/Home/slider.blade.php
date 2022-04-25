@@ -11,7 +11,7 @@
           <div class="aa-top-slider-content">
             <span class="aa-top-slider-catg">{{$rs->propertytype}}</span>
             <h2 class="aa-top-slider-title">{{$rs->metre}} Square Feet</h2>
-            <p class="aa-top-slider-location">{{$rs->title}}</p>
+            <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>{{$rs->location}}</p>
             <p class="aa-top-slider-price">${{$rs->price}}</p>
             <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
           </div>
