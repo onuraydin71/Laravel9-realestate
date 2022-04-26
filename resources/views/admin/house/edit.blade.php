@@ -133,9 +133,17 @@
 						</div>
 
 						<div class="form-group">
-							<label>Warm-up Type</label>
-							<input class="form-control" type="text" name="warmuptype" value="{{$data->warmuptype}}">
-						</div>
+                        <label>Warm-up Type</label>
+                        <select class="custom-select col-12" name="warmuptype">
+									<option selected="">Choose...</option>
+									<option >Natural Gas Central Heating System</option>
+									<option >Liquid Fuel Central Heating Systems</option> 
+									<option >LPG Central Heating Systems</option> 
+									<option >Wood and Coal Heating Systems</option> 
+									<option >Solar Heating Systems</option> 
+									<option >Water Heating Systems with Thermosiphon</option> 	
+								</select>
+                                </div>
 
 						<div class="form-group">
 							<label>Number Of Bathrooms</label>

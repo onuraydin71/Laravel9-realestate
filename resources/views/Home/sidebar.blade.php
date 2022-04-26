@@ -1,4 +1,8 @@
  <!-- Start menu section -->
+ 
+    @php
+    $mainCategories= \App\Http\Controllers\HomeController::maincategorylist()
+    @endphp
  <section id="aa-menu-area">
     <nav class="navbar navbar-default main-navbar" role="navigation">  
       <div class="container">
@@ -18,24 +22,20 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
+          
             <li class="active"><a href="{{route('admin')}}">HOME</a></li>
+            
+            @foreach($mainCategories as $rs) 
              <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTIES <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">                
-                <li><a href="properties.html">PROPERTIES</a></li>
-                <li><a href="properties-detail.html">PROPERTIES DETAIL</a></li>                                            
+              <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">{{$rs->title}}<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu"> 
+                       @if(count($rs->children))
+                            @include('home.categorytree',['children' => $rs->children])
+                          @endif 
               </ul>
             </li>
-            <li><a href="gallery.html">GALLERY</a></li>                                         
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">BLOG <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">                
-                <li><a href="blog-archive.html">BLOG</a></li>
-                <li><a href="blog-single.html">BLOG DETAILS</a></li>                                            
-              </ul>
-            </li>
-            <li><a href="contact.html">CONTACT</a></li>
-           <li><a href="404.html">404 PAGE</a></li>
+            @endforeach
+   
           </ul>                            
         </div><!--/.nav-collapse -->       
       </div>          
