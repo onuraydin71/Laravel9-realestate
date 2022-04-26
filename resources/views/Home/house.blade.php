@@ -16,7 +16,7 @@
           <div class="aa-property-header-inner">
             <h2>Home Details</h2>
             <ol class="breadcrumb">
-            <li><a href="#">{{$data->category->title}}</a></li>            
+            <li><a>{{$data->category->title}}</a></li>            
             <li class="active">{{$data->title}}</li>
           </ol>
           </div>

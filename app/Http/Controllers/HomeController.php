@@ -39,14 +39,11 @@ class HomeController extends Controller
 
     public function categoryhouses($id){
 
-        echo "dsadsada";
-        exit();
-        $data=House::find($id);
-        $images= DB::table('images')->where('house_id',$id)->get();
-       
-        return view('home.house',[
-            'data'=>$data,
-            'images'=>$images
+        $category=Category::find($id);
+        $houses= DB::table('houses')->where('category_id',$id)->get();
+        return view('home.categoryhouses',[
+            'category'=>$category,
+            'houses'=>$houses
             
         ]);
     }

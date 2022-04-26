@@ -56,7 +56,6 @@
 								<th>Price</th>
 								<th>Property Type</th>
 								<th>m²</th>
-								<th>Number Of Rooms</th>
 								<th>Image</th>
 								<th>Image Gallery</th>
 								<th>Status</th>
@@ -71,13 +70,12 @@
 							<tr>
 								<td>{{$rs->id}}</td>
 								<td>
-								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
+								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}
 								</td>
 								<td>{{$rs->title}}</td>
 								<td>{{$rs->price}}</td>
 								<td>{{$rs->propertytype}}</td>
 								<td>{{$rs->metre}}</td>
-								<td>{{$rs->numberofrooms}}</td>
 								<td>
 									@if ($rs->image)
 									<img src="{{ asset('storage/img/'.$rs->image)}}" style="height: 40px">

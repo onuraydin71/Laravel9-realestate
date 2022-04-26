@@ -100,7 +100,7 @@
           @foreach($houselist as $rs)
             <div class="col-md-4">
               <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
+                <a href="{{route('house',['id'=>$rs->id])}}" class="aa-properties-item-img">
                   <img src="{{asset('storage/img/'.$rs->image)}}" alt="">
                 </a>
                 <div class="aa-tag for-sale">
@@ -113,7 +113,7 @@
                     <span>{{$rs->metre}} SQ FT</span>
                   </div>
                   <div class="aa-properties-about">
-                    <h3><a href="#">{{$rs->title}}</a></h3>
+                    <h3><a href="{{route('house',['id'=>$rs->id])}}">{{$rs->title}}</a></h3>
                     <p>{{$rs->description}}</p>                      
                   </div>
                   <div class="aa-properties-detial">

@@ -59,7 +59,7 @@
 								<th style="width: 50px">Category</th>
 								<td>
 								
-								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data,$data->title)}}
+								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category,$data->category->title)}}
 								</td>
 								
 							</tr>
