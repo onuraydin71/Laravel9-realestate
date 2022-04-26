@@ -12,13 +12,13 @@
           </button>
           <!-- LOGO -->                                               
           <!-- Text based logo -->
-           <a class="navbar-brand aa-logo" href="index.html"> Home <span>Property</span></a>
+           <a class="navbar-brand aa-logo" href="{{route('admin')}}"> Home <span>Sale</span></a>
            <!-- Image based logo -->
            <!-- <a class="navbar-brand aa-logo-img" href="index.html"><img src="{{asset('assets')}}/img/logo.png" alt="logo"></a> -->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
-            <li class="active"><a href="index.html">HOME</a></li>
+            <li class="active"><a href="{{route('admin')}}">HOME</a></li>
              <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">PROPERTIES <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">                

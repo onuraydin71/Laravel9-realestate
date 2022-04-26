@@ -28,13 +28,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/',[HomeController::class,'index']);
+Route::get('/house/{id}',[HomeController::class,'house'])->name('house');
+Route::get('/',[HomeController::class,'index'])->name('admin');
 
 Route::get('/deneme',[TestController::class,'deneme']);
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
 Route::get('',[AdminHomeController::class,'index'])->name(name:'index');
+
+
 
 //**********************ADMIN HOUSE ROUTES**********************/
 Route::prefix('/house')->name('house.')->controller(AdminHouseController::class)->group(function () {

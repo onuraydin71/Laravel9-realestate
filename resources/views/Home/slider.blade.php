@@ -13,7 +13,7 @@
             <h2 class="aa-top-slider-title">{{$rs->metre}} Square Feet</h2>
             <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>{{$rs->location}}</p>
             <p class="aa-top-slider-price">${{$rs->price}}</p>
-            <a href="#" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
+            <a href="{{route('house',['id'=>$rs->id])}}" class="aa-top-slider-btn">Read More <span class="fa fa-angle-double-right"></span></a>
           </div>
           <!-- / Top slider content -->
         </div>

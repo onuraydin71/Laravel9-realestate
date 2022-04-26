@@ -101,7 +101,7 @@
             <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
-                  <img src="{{ asset('storage/img/'.$rs->image)}}" alt="">
+                  <img src="{{asset('storage/img/'.$rs->image)}}" alt="">
                 </a>
                 <div class="aa-tag for-sale">
                   For Sale
@@ -120,7 +120,7 @@
                     <span class="aa-price">
                     ${{$rs->price}}
                     </span>
-                    <a href="#" class="aa-secondary-btn">View Details</a>
+                    <a href="{{route('house',['id'=>$rs->id])}}" class="aa-secondary-btn">View Details</a>
                   </div>
                 </div>
               </article>
