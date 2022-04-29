@@ -157,7 +157,7 @@
                         <div class="sidebar-small-cap">LABELS</div>
                     </li>
                     <li>
-                        <a href="admin/setting" class="dropdown-toggle no-arrow">
+                        <a href="/admin/setting" class="dropdown-toggle no-arrow">
 						
 						<span class="micon icon-copy ion-gear-a">  </span><span class="mtext">Settings</span>
                         </a>

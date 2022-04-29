@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Image;
 use App\Models\Category;
+use App\Models\Setting;
 
 class HomeController extends Controller
 {
@@ -15,10 +16,14 @@ class HomeController extends Controller
 
     public function index(){
 
+        $page='home';
         $sliderdata=House::limit(4)->get();
         $houselist=House::limit(15)->get();
-       
+        $setting=Setting::first();
+
         return view('home.index',[
+            'page'=>$page,
+            'setting'=>$setting,
             'sliderdata'=>$sliderdata,
             'houselist'=>$houselist
         

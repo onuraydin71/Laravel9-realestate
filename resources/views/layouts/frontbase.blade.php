@@ -7,9 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>@yield("title")</title>
+
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
+    <meta name="author" content="Onur AYDIN">
+    
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('assets')}}/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('storage/img/'.$setting->icon)}}" type="image/x-icon">
 
     <!-- Font awesome -->
     <link href="{{asset('assets')}}/css/font-awesome.css" rel="stylesheet">

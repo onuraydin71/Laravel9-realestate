@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\AdminPanel\AdminHouseController;
 use App\Http\Controllers\AdminPanel\HouseController;
 use App\Http\Controllers\AdminPanel\ImageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +40,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::get('',[AdminHomeController::class,'index'])->name(name:'index');
 
 
+//**********************GENERAL ROUTES**********************/
+Route::get('/setting',[AdminHomeController::class,'setting'])->name(name:'setting');
+Route::post('/setting',[AdminHomeController::class,'settingUpdate'])->name(name:'setting.update');
 
 //**********************ADMIN HOUSE ROUTES**********************/
 Route::prefix('/house')->name('house.')->controller(AdminHouseController::class)->group(function () {

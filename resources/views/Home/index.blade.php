@@ -1,6 +1,10 @@
 @extends('layouts.frontbase')
 
-@section('title','Real Estate')
+@section('title', $setting->title)
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
+
+
 
  @section('slider')
  @include('home.slider')
