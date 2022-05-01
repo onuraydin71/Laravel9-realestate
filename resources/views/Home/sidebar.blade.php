@@ -23,7 +23,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right aa-main-nav">
           
-            <li class="active"><a href="{{route('admin')}}">HOME</a></li>
+            <li class="{{ '/' == request()->path() ? 'active' : '' }}" ><a href="{{route('admin')}}">HOME</a></li>
             
             @foreach($mainCategories as $rs) 
              <li class="dropdown">
@@ -36,6 +36,9 @@
             </li>
             @endforeach
    
+            <li class="{{ 'admin/about' == request()->path() ? 'active' : '' }}"><a href="{{route('admin.about')}}">About Us</a></li>
+            <li class="{{ 'admin/references' == request()->path() ? 'active' : '' }}"><a href="{{route('admin.references')}}">References</a></li>
+            <li class="{{ 'admin/contact' == request()->path() ? 'active' : '' }}"><a href="{{route('admin.contact')}}">Contact</a></li>
           </ul>                            
         </div><!--/.nav-collapse -->       
       </div>          

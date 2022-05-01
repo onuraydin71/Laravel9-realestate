@@ -9,6 +9,8 @@ use App\Models\House;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Operator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use App\Models\Setting;
 
 
 class AdminHouseController extends Controller
@@ -176,7 +178,11 @@ class AdminHouseController extends Controller
     public function destroy(House $house,$id)
     {
         $data=House::find($id);
-        Storage::delete($data->image);
+        $destination= 'storage/img/'.$data->image;
+        if(File::exists($destination))
+        {
+            File::delete($destination);
+        }
         $data->delete();
         return redirect ('admin/house');
     }

@@ -30,15 +30,42 @@ class HomeController extends Controller
         ]);
     }
 
+    public function about(){
+
+        $setting=Setting::first();
+
+        return view('home.about',[
+            'setting'=>$setting,
+        ]);
+    }
+
+    public function references(){
+
+        $setting=Setting::first();
+
+        return view('home.references',[
+            'setting'=>$setting,
+        ]);
+    }
+
+    public function contact(){
+        
+        $setting=Setting::first();
+
+        return view('home.contact',[
+            'setting'=>$setting,
+        ]);
+    }
+
     public function house($id){
 
         $data=House::find($id);
         $images= DB::table('images')->where('house_id',$id)->get();
-       
+        $setting=Setting::first();
         return view('home.house',[
             'data'=>$data,
-            'images'=>$images
-            
+            'images'=>$images,
+            'setting'=>$setting
         ]);
     }
 
@@ -46,9 +73,11 @@ class HomeController extends Controller
 
         $category=Category::find($id);
         $houses= DB::table('houses')->where('category_id',$id)->get();
+        $setting=Setting::first();
         return view('home.categoryhouses',[
             'category'=>$category,
-            'houses'=>$houses
+            'houses'=>$houses,
+            'setting'=>$setting
             
         ]);
     }

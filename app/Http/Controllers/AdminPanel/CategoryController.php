@@ -8,6 +8,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Operator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use App\Models\Setting;
 
 
 class CategoryController extends Controller
@@ -156,7 +158,11 @@ class CategoryController extends Controller
     public function destroy(Category $category,$id)
     {
         $data=Category::find($id);
-        Storage::delete($data->image);
+        $destination= 'storage/img/'.$data->image;
+        if(File::exists($destination))
+        {
+            File::delete($destination);
+        }
         $data->delete();
         return redirect ('admin/category');
     }

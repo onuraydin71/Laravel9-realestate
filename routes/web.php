@@ -37,7 +37,11 @@ Route::get('/deneme',[TestController::class,'deneme']);
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
+//**********************ADMIN PAGE ROUTES**********************/
 Route::get('',[AdminHomeController::class,'index'])->name(name:'index');
+Route::get('about',[HomeController::class,'about'])->name(name:'about');
+Route::get('/references',[HomeController::class,'references'])->name(name:'references');
+Route::get('/contact',[HomeController::class,'contact'])->name(name:'contact');
 
 
 //**********************GENERAL ROUTES**********************/

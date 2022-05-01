@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\House;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use App\Models\Setting;
 
 class ImageController extends Controller
 {
@@ -95,7 +97,11 @@ class ImageController extends Controller
     public function destroy($pid,$id)
     {
         $data=Image::find($id);
-        Storage::delete($data->image);
+        $destination= 'storage/img/'.$data->image;
+        if(File::exists($destination))
+        {
+            File::delete($destination);
+        }
         $data->delete();
         return redirect()->route('admin.image.index',['pid'=>$pid]);
     }
