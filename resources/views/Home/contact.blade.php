@@ -55,23 +55,29 @@
                 <span></span>
                 <p>Your email address will not be published. Required fields are marked <strong class="required">*</strong></p>
               </div>
+              @include('home.messages')
               <div class="aa-contact-form">
-                <form class="contactform">                  
+                <form action="{{route('admin.storemessage')}}" class="contactform" method="post">         
+                  @csrf         
                   <p class="comment-form-author">
                     <label for="author">Name <span class="required">*</span></label>
-                    <input type="text" name="author" value="" size="30" required="required">
+                    <input type="text" name="name" placeholder="Name & Surname" size="30" required="required">
+                  </p>
+                  <p class="comment-form-author">
+                    <label for="author">Phone <span class="required">*</span></label>
+                    <input type="text" name="phone" placeholder="Phone Number" size="30" required="required">
                   </p>
                   <p class="comment-form-email">
                     <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" name="email" value="" aria-required="true" required="required">
+                    <input type="email" name="email"  placeholder="Email" aria-required="true" required="required">
                   </p>
                   <p class="comment-form-url">
                     <label for="subject">Subject</label>
-                    <input type="text" name="subject">  
+                    <input type="text" name="subject" placeholder="Subject">  
                   </p>
                   <p class="comment-form-comment">
-                    <label for="comment">Message</label>
-                    <textarea name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
+                    <label for="message">Message</label>
+                    <textarea name="message" cols="45" rows="8" placeholder="Your Message" aria-required="true" required="required"></textarea>
                   </p>                
                   <p class="form-submit">
                   <button type="submit" class="btn btn-primary">Send Message</button>

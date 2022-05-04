@@ -131,7 +131,7 @@
                         </a>
                     </li>
 					<li>
-                        <a href="/admin/messages" class="dropdown-toggle no-arrow">
+                        <a href="{{route('admin.message.index')}}" class="dropdown-toggle no-arrow">
 						
                             <span class="micon icon-copy ion-ios-email">  </span><span class="mtext">Messages</span>
                         </a>

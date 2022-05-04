@@ -27,7 +27,7 @@
             
             @foreach($mainCategories as $rs) 
              <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="properties.html">{{$rs->title}}<span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="" >{{$rs->title}}<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu"> 
                        @if(count($rs->children))
                             @include('home.categorytree',['children' => $rs->children])
