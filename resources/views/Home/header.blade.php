@@ -17,10 +17,22 @@
                 </div>              
               </div>
               <div class="col-md-6 col-sm-6 col-xs-6">
+                @auth
                 <div class="aa-header-right">
-                  <a href="register.html" class="aa-register">Register</a>
-                  <a href="signin.html" class="aa-login">Login</a>
+                  
+                    <i class="fa fa-user-o"></i>
+                  
+                  <strong class="text-uppercase">{{Auth::user()->name}}&nbsp&nbsp&nbsp</strong>
+                  <a href="/logoutuser" class="aa-login">Logout</a>
+
+                  @endauth
+                  @guest
+                  <div class="aa-header-right">
+                  <a href="/registeruser" class="aa-register">Register</a>
+                  <a href="/loginuser" class="aa-login">Login</a>
+                   @endguest       
                 </div>
+                
               </div>
             </div>
           </div>

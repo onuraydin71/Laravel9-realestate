@@ -71,8 +71,15 @@
         </div>
         <!-- Start properties sidebar -->
         <div class="col-md-4">
+          <!--@php
+          $average= $data->comment;
+          @endphp
+          {{number_format($average,2)}}-->
+          <span class="fa fa-star checked"></span>
+        <font color="red"><b> <!--{{$data->comment}}--> Review(s) / Add Review</b></font>
         @include('home.messages')
           <aside class="aa-properties-sidebar">
+            
             <!-- Start Single properties sidebar -->
             <div class="aa-properties-single-sidebar">
              

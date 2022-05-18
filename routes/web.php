@@ -24,6 +24,10 @@ use App\Http\Controllers\AdminPanel\CommentController;
 |
 */
 
+
+Route::view('/loginuser','home.login');
+Route::view('/registeruser','home.register');
+Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 Route::get('/', function () {
     return view('welcome');
 });
@@ -54,6 +58,7 @@ Route::post('storecomment',[HomeController::class,'storecomment'])->name(name:'s
 //**********************GENERAL ROUTES**********************/
 Route::get('/setting',[AdminHomeController::class,'setting'])->name(name:'setting');
 Route::post('/setting',[AdminHomeController::class,'settingUpdate'])->name(name:'setting.update');
+
 
 //**********************ADMIN HOUSE ROUTES**********************/
 Route::prefix('/house')->name('house.')->controller(AdminHouseController::class)->group(function () {
