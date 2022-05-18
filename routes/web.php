@@ -26,10 +26,10 @@ use App\Http\Controllers\AdminPanel\AdminUserController;
 */
 
 
-Route::view('/loginuser','home.login');
-Route::view('/registeruser','home.register');
+Route::view('/loginuser','home.login')->name('loginuser');;
+Route::view('/registeruser','home.register')->name('registeruser');;
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
-Route::view('/loginadmin','admin.login');
+Route::view('/loginadmin','admin.login')->name('loginadmin');;
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
 
 Route::get('/', function () {
@@ -47,7 +47,7 @@ Route::get('/',[HomeController::class,'index'])->name('admin');
 Route::get('/deneme',[TestController::class,'deneme']);
 
 Route::get('/faq',[HomeController::class,'faq'])->name(name:'faq');
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
 //**********************ADMIN PAGE ROUTES**********************/
 Route::get('',[AdminHomeController::class,'index'])->name(name:'index');
