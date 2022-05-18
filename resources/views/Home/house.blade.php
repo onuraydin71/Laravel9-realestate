@@ -2,8 +2,6 @@
 
 @section('title', $data->title)
 
-
-
   @section('content')
   
  
@@ -42,7 +40,7 @@
              </div>
              <div class="aa-properties-info">
                <h2>{{$data->title}}</h2>
-               <span class="aa-price">${{$data->price}}</span>
+               <span class="aa-price">{{$data->price}} ₺</span>
                <p>{{$data->description}}</p>
                
                <br>
@@ -73,9 +71,11 @@
         </div>
         <!-- Start properties sidebar -->
         <div class="col-md-4">
+        @include('home.messages')
           <aside class="aa-properties-sidebar">
             <!-- Start Single properties sidebar -->
             <div class="aa-properties-single-sidebar">
+             
               <h3>Properties Search</h3>
               <form action="">
                 <div class="aa-single-advance-search">
@@ -122,12 +122,76 @@
             </div> 
           </aside>
         </div>
-      
+    
+        
+        <div class="col-md-6">
+          <h4><font color="orange">REVIEWS</font></h4>
+                      @foreach($reviews as $rs)
+                          <div class="media">
+                                <div class="media-body">
+                                 <h4 ><i class="fa fa-user-o"></i> {{$rs->user->name}}</h4>
+                                 <h5>{{$rs->created_at}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font color="red">RATING->&nbsp&nbsp</font><strong><span class="fa fa-star checked"></span></strong>&nbsp<strong><font color="black">{{$rs->rate}}</font></strong>/5</h5>
+                                 <h4><font color="red">{{$rs->subject}}</font></h4>
+                                 <p>{{$rs->review}}</p>
+                               
+                                </div>
+                          </div>
+                          @endforeach
+                    </div>
+
+        <div class="col-md-6">
+                      <div id="respond">
+                        <h3 class="reply-title">Write Your Review</h3>
+                        <p class="comment-notes">
+                            Your email address will not be published. Required fields are marked <span class="required">*</span>
+                          </p>
+                        <form id="commentform" action="{{route('admin.storecomment')}}" method="POST">
+                          @csrf
+                          <p class="comment-form-author">
+                            <input type="hidden" required="required" size="30" value="{{$data->id}}" name="house_id">
+                          </p>
+                          <p class="comment-form-email">
+                            <label for="email">Subject <span class="required">*</span></label>
+                            <input type="text" required="required" aria-required="true" value="" name="subject" placeholder="Subject">
+                          </p>
+                          <p class="comment-form-comment">
+                            <label for="comment">Review</label>
+                            <textarea required="required" aria-required="true" rows="8" cols="45" name="review"></textarea>
+                          </p>
+                          <div class="form-group">
+                         <label>Rating</label>
+                          <select class="custom-select col-12" name="rate">
+									        <option selected="">Choose...</option>
+									      <option >1</option>
+								        	<option >2</option> 
+                          <option >3</option>
+								        	<option >4</option> 
+                          <option >5</option>
+								        	
+									
+							          	</select>
+                                </div>
+                          @auth
+                          <p class="form-submit">
+                            <input type="submit" value="Post Comment" class="primary-btn" name="submit">
+                          </p>    
+                          @else
+                          <p class="form-submit">
+                            <a href="/login" class="primary-btn"> For Submit Your Review, Please Login </a>
+                          </p>
+                          @endauth
+
+                        </form>
+                      </div>
+                    </div>
+
+                   
     </div>
 
     
   </section>
   <!-- / Properties  -->
+  
 
  
   @endsection

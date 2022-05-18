@@ -36,6 +36,10 @@
 */
 /* BASE - Base tyles, Variables, Mixins, etc. */
 
+.checked {
+  color: yellow;
+}
+
 body {
   background-color: #ffffff;
   font-family: "Open Sans", sans-serif;

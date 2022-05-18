@@ -8,6 +8,9 @@ use App\Models\Image;
 use App\Models\Category;
 use App\Models\Setting;
 use App\Models\Message;
+use App\Models\Faq;
+use App\Models\Comment;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -58,6 +61,18 @@ class HomeController extends Controller
         ]);
     }
 
+    public function faq(){
+        
+        $setting=Setting::first();
+        $datalist=Faq::all();
+
+        return view('home.faq',[
+            'setting'=>$setting,
+            'datalist'=>$datalist
+        ]);
+    }
+
+
     public function storemessage(Request $request){
         
         $data= new Message();
@@ -72,15 +87,32 @@ class HomeController extends Controller
         return redirect()->route('admin.contact')->with('info','YOUR MESSAGE HAS BEEN SENT , THANK YOU.');
     }
 
+    public function storecomment(Request $request){
+        
+       // dd($request);
+        $data= new Comment();
+        $data->user_id= Auth::id();
+        $data->house_id=$request->input('house_id');
+        $data->subject=$request->input('subject');
+        $data->review=$request->input('review');
+        $data->rate=$request->input('rate');
+        $data->ip= request()->ip();
+        $data->save();
+        
+        return redirect()->route('house',['id'=>$request->input('house_id') ])->with('success','YOUR COMMENT HAS BEEN SENT , THANK YOU.');
+    }
+
     public function house($id){
 
         $data=House::find($id);
         $images= DB::table('images')->where('house_id',$id)->get();
         $setting=Setting::first();
+        $reviews= Comment::where('house_id',$id)->where('status','True')->get();
         return view('home.house',[
             'data'=>$data,
             'images'=>$images,
-            'setting'=>$setting
+            'setting'=>$setting,
+            'reviews'=>$reviews
         ]);
     }
 

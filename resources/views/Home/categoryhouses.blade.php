@@ -83,7 +83,7 @@
                       </div>
                       <div class="aa-properties-detial">
                         <span class="aa-price">
-                        ${{$rs->price}}
+                        {{$rs->price}} ₺
                         </span>
                         <a class="aa-secondary-btn" href="{{route('house',['id'=>$rs->id])}}">View Details</a>
                       </div>

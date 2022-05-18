@@ -10,6 +10,8 @@ use App\Http\Controllers\AdminPanel\AdminHouseController;
 use App\Http\Controllers\AdminPanel\HouseController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
+use App\Http\Controllers\AdminPanel\FaqController;
+use App\Http\Controllers\AdminPanel\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,7 @@ Route::get('/',[HomeController::class,'index'])->name('admin');
 
 Route::get('/deneme',[TestController::class,'deneme']);
 
+Route::get('/faq',[HomeController::class,'faq'])->name(name:'faq');
 Route::prefix('admin')->name('admin.')->group(function () {
 
 //**********************ADMIN PAGE ROUTES**********************/
@@ -44,6 +47,8 @@ Route::get('about',[HomeController::class,'about'])->name(name:'about');
 Route::get('/references',[HomeController::class,'references'])->name(name:'references');
 Route::get('/contact',[HomeController::class,'contact'])->name(name:'contact');
 Route::post('storemessage',[HomeController::class,'storemessage'])->name(name:'storemessage');
+Route::post('storecomment',[HomeController::class,'storecomment'])->name(name:'storecomment');
+
 
 
 //**********************GENERAL ROUTES**********************/
@@ -89,7 +94,26 @@ Route::prefix('/message')->name('message.')->controller(MessageController::class
     Route::post('/update/{id}','update')->name(name:'update');
     Route::get('/show/{id}','show')->name(name:'show');
     Route::get('/delete/{id}','destroy')->name(name:'delete');
-        });         
+        });   
+        
+//**********************ADMIN FAQ ROUTES**********************/
+Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group(function () {
 
+    Route::get('/','index')->name(name:'index');
+    Route::get('/create','create')->name(name:'create');
+    Route::post('/store','store')->name(name:'store');
+    Route::get('/edit/{id}','edit')->name(name:'edit');
+    Route::post('/update/{id}','update')->name(name:'update');
+    Route::get('/show/{id}','show')->name(name:'show');
+    Route::get('/delete/{id}','destroy')->name(name:'delete');
+    });        
 
+//**********************ADMIN COMMENT ROUTES**********************/
+Route::prefix('/comment')->name('comment.')->controller(CommentController::class)->group(function () {
+
+    Route::get('/','index')->name(name:'index');
+    Route::post('/update/{id}','update')->name(name:'update');
+    Route::get('/show/{id}','show')->name(name:'show');
+    Route::get('/delete/{id}','destroy')->name(name:'delete');
+        });  
 });
