@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    public static function count($id)
+    {
+        return Comment::where('house_id',$id)->where('status','True')->count();
+    }
+    public static function average($id)
+    {
+        return Comment::where('house_id',$id)->where('status','True')->average('rate');
+    }
+
     public static function maincategorylist(){
         return Category::where('parent_id','=',0)->with('children')->get();
     }
@@ -24,12 +33,14 @@ class HomeController extends Controller
         $sliderdata=House::limit(4)->get();
         $houselist=House::limit(15)->get();
         $setting=Setting::first();
+        
 
         return view('home.index',[
             'page'=>$page,
             'setting'=>$setting,
             'sliderdata'=>$sliderdata,
-            'houselist'=>$houselist
+            'houselist'=>$houselist,
+            
         
         ]);
     }
@@ -155,4 +166,6 @@ class HomeController extends Controller
             'error' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
+
+   
 }

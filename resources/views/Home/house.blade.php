@@ -71,12 +71,13 @@
         </div>
         <!-- Start properties sidebar -->
         <div class="col-md-4">
-          <!--@php
-          $average= $data->comment;
+          @php
+           $count= \App\Http\Controllers\HomeController::count($data->id);
+           $average= \App\Http\Controllers\HomeController::average($data->id);
           @endphp
-          {{number_format($average,2)}}-->
+          
           <span class="fa fa-star checked"></span>
-        <font color="red"><b> <!--{{$data->comment}}--> Review(s) / Add Review</b></font>
+        <font color="red"><b>  {{number_format($average,1)}}/5 Review(s) / Add Review</b></font>
         @include('home.messages')
           <aside class="aa-properties-sidebar">
             
@@ -132,7 +133,7 @@
     
         
         <div class="col-md-6">
-          <h4><font color="orange">REVIEWS</font></h4>
+          <h4><font color="orange">REVIEWS ({{$count}})</font></h4>
                       @foreach($reviews as $rs)
                           <div class="media">
                                 <div class="media-body">

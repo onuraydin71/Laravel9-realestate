@@ -9,10 +9,10 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    1-900-523-3564
+                    {{$setting->phone}}
                   </div>
                   <div class="aa-email hidden-xs">
-                    <span class="fa fa-envelope-o"></span> info@markups.com
+                    <span class="fa fa-envelope-o"></span>{{$setting->email}}
                   </div>
                 </div>              
               </div>

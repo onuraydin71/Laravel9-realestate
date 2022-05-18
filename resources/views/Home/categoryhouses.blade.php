@@ -68,6 +68,10 @@
                     <a class="aa-properties-item-img" href="{{route('house',['id'=>$rs->id])}}" >
                       <img alt="img" src="{{asset('storage/img/'.$rs->image)}}" style="width: 360px; height: 240px ">
                     </a>
+                    @php
+           $count= \App\Http\Controllers\HomeController::count($rs->id);
+           $average= \App\Http\Controllers\HomeController::average($rs->id);
+          @endphp
                     <div class="aa-tag for-rent">
                       For Sale
                     </div>
@@ -76,6 +80,9 @@
                       <span>{{$rs->numberofrooms}} Rooms</span>
                         <span>{{$rs->numberofbathrooms}} Baths</span>
                        <span>{{$rs->metre}} SQ FT</span>
+                       <span><span><span></span></span></span>
+                    <span class="fa fa-star checked"><font color="black"><b>{{number_format($average,1)}}</b>/5</font></span>
+                    <span>({{$count}}) </span>
                       </div>
                       <div class="aa-properties-about">
                         <h3><a href="{{route('house',['id'=>$rs->id])}}">{{$rs->title}}</a></h3>
