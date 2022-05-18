@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\CommentController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,4 +125,19 @@ Route::prefix('/comment')->name('comment.')->controller(CommentController::class
     Route::get('/show/{id}','show')->name(name:'show');
     Route::get('/delete/{id}','destroy')->name(name:'delete');
         });  
+
+
+//**********************ADMIN USER ROUTES**********************/
+Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function () {
+
+    Route::get('/','index')->name(name:'index');
+    Route::get('/edit/{id}','edit')->name(name:'edit');
+    Route::post('/update/{id}','update')->name(name:'update');
+    Route::get('/show/{id}','show')->name(name:'show');
+    Route::get('/delete/{id}','destroy')->name(name:'delete');
+    Route::post('/addrole/{id}','addrole')->name(name:'addrole');
+    Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name(name:'destroyrole');
+
+        });          
+        
 });

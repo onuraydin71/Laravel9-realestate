@@ -121,10 +121,7 @@
                     <span>{{$rs->numberofbathrooms}} Baths</span>
                     <span>{{$rs->metre}} SQ FT</span>
                     <span><span><span></span></span></span>
-                    
-                    
                     <span class="fa fa-star checked"><font color="black"><b>{{number_format($average,1)}}</b>/5</font></span>
-                    
                     <span>({{$count}}) </span>
                   </div>
                   <div class="aa-properties-about">
