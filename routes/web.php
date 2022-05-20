@@ -31,6 +31,8 @@ Route::view('/registeruser','home.register')->name('registeruser');;
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 Route::view('/loginadmin','admin.login')->name('loginadmin');;
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
+Route::post('/gethouse',[HomeController::class,'gethouse'])->name('gethouse');
+Route::get('/houselist/{search}',[HomeController::class,'houselist'])->name('houselist');
 
 Route::get('/', function () {
     return view('welcome');

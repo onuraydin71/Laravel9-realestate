@@ -26,67 +26,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
 
   <!-- Advance Search -->
-  <section id="aa-advance-search">
-    <div class="container">
-      <div class="aa-advance-search-area">
-        <div class="form">
-         <div class="aa-advance-search-top">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Type Your Location">
-                </div>
-              </div>
-              
-              <div class="col-md-2">
-                <div class="aa-single-advance-search">
-                  <select>
-                   <option value="0" selected>Category</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-md-2">
-                <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Min-Price">
-                </div>
-              </div>
-
-              <div class="col-md-2">
-                <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Max-Price">
-                </div>
-              </div>
-              
-              <div class="col-md-2">
-                <div class="aa-single-advance-search">
-                  <input class="aa-search-btn" type="submit" value="Search">
-                </div>
-              </div>
-             
-              <div class="aa-advance-search-bottom">
-           <div class="row">
-            <div class="col-md-4">
-            <div class="aa-single-advance-search">
-                  <h1></h1>
-                </div>
-              </div>
-              <div class="col-md-6">
-            <div class="aa-single-advance-search">
-                  <h1><p style="color:DodgerBlue  ;font-family:Playfair Display;font-weight:bold;font-size:160%">Home Showcase</p></h1>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
   <!-- / Advance Search -->
 
 
@@ -97,6 +37,33 @@
     <div class="container">
       <div class="aa-latest-property-area">
         <div class="aa-title">
+        <section id="aa-advance-search">
+    <div class="container">
+      <div class="aa-advance-search-area">
+        <div class="form">
+         <div class="aa-advance-search-top">
+            <div class="row">
+            <form action="{{route('gethouse')}}" method="post">
+              @csrf
+              
+              <div class="col-md-4">
+                <div class="aa-single-advance-search">
+                @livewire('search')
+                </div>
+              </div>
+              
+              <div class="col-md-2">
+                <div class="aa-single-advance-search">
+                  <input class="aa-search-btn" type="submit" value="Search">
+                </div>
+              </div>
+            </form> 
+            @livewireScripts
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
         </div>
         <div class="aa-latest-properties-content">
           <div class="row">

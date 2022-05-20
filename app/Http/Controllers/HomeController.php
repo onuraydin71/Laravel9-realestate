@@ -167,5 +167,34 @@ class HomeController extends Controller
         ])->onlyInput('email');
     }
 
-   
+    public function gethouse(Request $request)
+    {
+        $search= $request->input('search');
+
+        $count= House::where('title','like','%'.$search.'%')->get()->count();
+
+        if($count==1)
+        {
+        $data= House::where('title','like','%'.$search.'%')->first();
+        return redirect()->route('house',['id'=>$data->id,'slug'=>$data->slug]);
+        }
+        else
+        {
+            return redirect()->route('houselist',['search'=>$search]);
+        }
+    }
+
+    public function houselist($search)
+    {
+        $datalist= House::where('title','like','%'.$search.'%')->get();
+       
+        return view('home.search_houses',
+        ['search'=>$search,
+        'datalist'=>$datalist,
+        
+
+        ]);
+    }
+
+    
 }

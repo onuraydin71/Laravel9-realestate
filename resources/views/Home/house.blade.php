@@ -85,36 +85,22 @@
             <div class="aa-properties-single-sidebar">
              
               <h3>Properties Search</h3>
-              <form action="">
+              <form action="{{route('gethouse')}}" method="post">
+              @csrf
+              
+              <div class="col-md-20">
                 <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Type Your Location">
-                </div>
-                <div class="aa-single-advance-search">
-                  <select id="" name="">
-                   <option selected="" value="0">Category</option>
-                    <option value="1">Flat</option>
-                    <option value="2">Land</option>
-                    <option value="3">Plot</option>
-                    <option value="4">Commercial</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Min-Price">
+                @livewire('search')
                 </div>
               </div>
-
-              <div class="col-md-6">
+              
+              <div class="col-md-8">
                 <div class="aa-single-advance-search">
-                  <input type="text" placeholder="Max-Price">
+                  <input class="aa-search-btn" type="submit" value="Search">
                 </div>
               </div>
-                
-                
-                <div class="aa-single-advance-search">
-                  <input type="submit" value="Search" class="aa-search-btn">
-                </div>
-              </form>
+            </form> 
+            @livewireScripts
             </div> 
           </aside>
         </div>

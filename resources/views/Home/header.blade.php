@@ -9,10 +9,10 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    {{$setting->phone}}
+                    5458541254
                   </div>
                   <div class="aa-email hidden-xs">
-                    <span class="fa fa-envelope-o"></span>{{$setting->email}}
+                    <span class="fa fa-envelope-o"></span> onuraydin@gmail.com
                   </div>
                 </div>              
               </div>

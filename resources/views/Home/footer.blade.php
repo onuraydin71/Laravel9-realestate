@@ -7,7 +7,7 @@
           <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="aa-footer-left">
-               <p>Designed by <a rel="nofollow" href="http://www.markups.io/">{{$setting->company}}</a></p>
+               <p>Designed by <a rel="nofollow" href="http://www.markups.io/"> Onur Aydin </a></p>
               </div>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
