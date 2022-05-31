@@ -16,7 +16,7 @@
     
     <!-- Favicon -->
     
-
+    <link rel="shortcut icon" href="{{asset('storage/img/'.$setting->icon)}}" type="image/x-icon">
     <!-- Font awesome -->
     <link href="{{asset('assets')}}/css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->

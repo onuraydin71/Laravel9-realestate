@@ -28,20 +28,19 @@ class HomeController extends Controller
     }
 
     public function index(){
-
+          
         $page='home';
         $sliderdata=House::limit(4)->get();
         $houselist=House::limit(15)->get();
+        $housegallery=House::limit(200)->get();
         $setting=Setting::first();
-        
 
         return view('home.index',[
             'page'=>$page,
             'setting'=>$setting,
             'sliderdata'=>$sliderdata,
             'houselist'=>$houselist,
-            
-        
+            'housegallery'=>$housegallery,
         ]);
     }
 
@@ -114,12 +113,13 @@ class HomeController extends Controller
     }
 
     public function house($id){
-
+        $category=Category::find($id);
         $data=House::find($id);
         $images= DB::table('images')->where('house_id',$id)->get();
         $setting=Setting::first();
         $reviews= Comment::where('house_id',$id)->where('status','True')->get();
         return view('home.house',[
+            'category'=>$category,
             'data'=>$data,
             'images'=>$images,
             'setting'=>$setting,
@@ -151,9 +151,11 @@ class HomeController extends Controller
     public function loginadmincheck(Request $request)
     {
         //dd($request);
+        $setting=Setting::first();
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
+            'setting'=>$setting
         ]);
  
         if (Auth::attempt($credentials)) {
@@ -187,12 +189,33 @@ class HomeController extends Controller
     public function houselist($search)
     {
         $datalist= House::where('title','like','%'.$search.'%')->get();
-       
+        $setting=Setting::first();
         return view('home.search_houses',
         ['search'=>$search,
         'datalist'=>$datalist,
+        'setting'=>$setting
         
 
+        ]);
+    }
+
+    public function loginuser()
+    {
+        
+        $setting=Setting::first();
+        return view('home.login',
+        [
+        'setting'=>$setting
+        ]);
+    }
+
+    public function registeruser()
+    {
+        
+        $setting=Setting::first();
+        return view('home.register',
+        [
+        'setting'=>$setting
         ]);
     }
 

@@ -1,15 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\AdminPanel;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Role;
-use App\Models\User;
-use App\Models\RoleUser;
 use Illuminate\Http\Request;
 use App\Models\Setting;
 
-class AdminUserController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +14,11 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
         $setting=Setting::first();
-        return view('admin.user.index', [
+        return view('home.user.index',[
+            'setting'=>$setting,
 
-            'data'=> $data,
-            'setting'=>$setting    
-        ]);
+    ]);
     }
 
     /**
@@ -56,23 +50,7 @@ class AdminUserController extends Controller
      */
     public function show($id)
     {
-        $data=User::find($id);
-        $roles=Role::all();
-        $setting=Setting::first();
-        return view ('admin.user.show',[
-           'data' => $data, 
-           'roles'=>$roles,
-           'setting'=>$setting
-        ]);
-    }
-
-    public function addrole(Request $request, $id)
-    {
-        $data=new RoleUser();
-        $data->user_id= $id;
-        $data->role_id= $request->role_id;
-        $data->save();
-        return redirect (route('admin.user.show',['id'=>$id]));
+        //
     }
 
     /**
@@ -104,10 +82,8 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroyrole($uid,$rid)
+    public function destroy($id)
     {
-        $user= User::find($uid);
-        $user->roles()->detach($rid);
-        return redirect(route('admin.user.show',['id'=>$uid]));
+        //
     }
 }

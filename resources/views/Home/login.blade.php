@@ -13,7 +13,6 @@
       <div class="row">
         <div class="col-md-12">
           <div class="aa-property-header-inner">
-            <h2>About Us</h2>
             <ol class="breadcrumb">
             <li><a href="{{route('admin')}}">HOME</a></li>            
             <li class="active">User Login</li>

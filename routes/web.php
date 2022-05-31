@@ -13,7 +13,7 @@ use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,8 +26,8 @@ use App\Http\Controllers\AdminPanel\AdminUserController;
 */
 
 
-Route::view('/loginuser','home.login')->name('loginuser');;
-Route::view('/registeruser','home.register')->name('registeruser');;
+Route::get('/loginuser',[HomeController::class,'loginuser'])->name('loginuser');;
+Route::get('/registeruser',[HomeController::class,'registeruser'])->name('registeruser');;
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
 Route::view('/loginadmin','admin.login')->name('loginadmin');;
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
@@ -49,6 +49,18 @@ Route::get('/',[HomeController::class,'index'])->name('admin');
 Route::get('/deneme',[TestController::class,'deneme']);
 
 Route::get('/faq',[HomeController::class,'faq'])->name(name:'faq');
+
+
+//**********************USER AUTH CONTROL**********************/
+Route::middleware('auth')->group(function() {
+
+//**********************USER ROUTES**********************/
+    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
+
+        Route::get('/','index')->name('index');
+    });
+
+//**********************ADMIN PANEL ROUTES**********************/
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
 //**********************ADMIN PAGE ROUTES**********************/
@@ -142,4 +154,5 @@ Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->g
 
         });          
         
+    }); 
 });

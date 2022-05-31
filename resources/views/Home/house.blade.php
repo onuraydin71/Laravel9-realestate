@@ -12,10 +12,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="aa-property-header-inner">
-            <h2>Home Details</h2>
+            <h2>{{$data->category->title}} Page</h2>
             <ol class="breadcrumb">
-            <li><a>{{$data->category->title}}</a></li>            
-            <li class="active">{{$data->title}}</li>
+            <li><a href="{{route('admin')}}">HOME</a></li>            
+            <li class="active">{{$data->propertytype}}</li>
           </ol>
           </div>
         </div>

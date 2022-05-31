@@ -87,9 +87,9 @@
                     <span>{{$rs->numberofrooms}} Rooms</span>
                     <span>{{$rs->numberofbathrooms}} Baths</span>
                     <span>{{$rs->metre}} SQ FT</span>
-                    <span><span><span></span></span></span>
+                    <span></span>
                     <span class="fa fa-star checked"><font color="black"><b>{{number_format($average,1)}}</b>/5</font></span>
-                    <span>({{$count}}) </span>
+                    <span><i class="fa fa-comment-o"></i> {{$count}} </span>
                   </div>
                   <div class="aa-properties-about">
                     <h3><a href="{{route('house',['id'=>$rs->id])}}">{{$rs->title}}</a></h3>
@@ -189,149 +189,28 @@
         <div class="col-md-12">
           <div class="aa-agents-area">
             <div class="aa-title">
-              <h2>Our Agents</h2>
+              <h2>HOUSES</h2>
               <span></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+              
             </div>
             <!-- agents content -->
             <div class="aa-agents-content">
               <ul class="aa-agents-slider">
-                <li>
+                
+              @foreach($housegallery as $rs)
+              <li>
                   <div class="aa-single-agents">
                     <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-1.png" alt="agent member image">
+                    <a href="{{route('house',['id'=>$rs->id])}}">
+                      <img src="{{asset('storage/img/'.$rs->image)}}" alt="agent member image" style="width: 270px; height: 220px ">
+                    </a>
                     </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Philip Smith</a></h4>
-                      <span>Top Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
+                    
                   </div>
                 </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-5.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Adam Barney</a></h4>
-                      <span>Expert Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-3.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Paul Walker</a></h4>
-                      <span>Director</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-4.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">John Smith</a></h4>
-                      <span>Jr. Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                 <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-1.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Philip Smith</a></h4>
-                      <span>Top Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-5.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Adam Barney</a></h4>
-                      <span>Expert Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-3.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">Paul Walker</a></h4>
-                      <span>Director</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="aa-single-agents">
-                    <div class="aa-agents-img">
-                      <img src="{{asset('assets')}}/img/agents/agent-4.png" alt="agent member image">
-                    </div>
-                    <div class="aa-agetns-info">
-                      <h4><a href="#">John Smith</a></h4>
-                      <span>Jr. Agent</span>
-                      <div class="aa-agent-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
+                @endforeach
+                
+                 
               </ul>
             </div>
           </div>
@@ -349,7 +228,8 @@
             <div class="row">
               <div class="col-md-5">
                 <div class="aa-about-us-left">
-                  <img src="{{asset('assets')}}/img/about-us.png" alt="image">
+                <br><br><br><br>
+                  <img src="{{asset('assets')}}/img/aboutus.jpeg" sytle="height:334px ; width:432px" alt="image">
                 </div>
               </div>
               <div class="col-md-7">
@@ -358,15 +238,10 @@
                     <h2>About Us</h2>
                     <span></span>
                   </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat ab dignissimos vitae maxime adipisci blanditiis rerum quae quos! Id at rerum maxime modi fugit vero corrupti, ad atque sit laborum ipsum sunt blanditiis suscipit odio, aut nostrum assumenda nobis rem a maiores temporibus non commodi laboriosam, doloremque expedita! Corporis, provident?</p>                  
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>                    
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, blanditiis.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia.</li>
-                  </ul>
+                  <p>
+                    {!!$setting->aboutus!!}
+                  </p>                  
+                  
                 </div>
               </div>
             </div>

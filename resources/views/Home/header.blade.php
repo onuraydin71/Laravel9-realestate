@@ -9,10 +9,10 @@
                 <div class="aa-header-left">
                   <div class="aa-telephone-no">
                     <span class="fa fa-phone"></span>
-                    5458541254
+                    {{$setting->phone}}
                   </div>
                   <div class="aa-email hidden-xs">
-                    <span class="fa fa-envelope-o"></span> onuraydin@gmail.com
+                    <span class="fa fa-envelope-o"></span> {{$setting->email}}
                   </div>
                 </div>              
               </div>
@@ -22,8 +22,9 @@
                   
                     <i class="fa fa-user-o"></i>
                   
-                  <strong class="text-uppercase">{{Auth::user()->name}}&nbsp&nbsp&nbsp</strong>
-                  <a href="/logoutuser" class="aa-login">Logout</a>
+                  <strong class="text-uppercase">{{Auth::user()->name}}&nbsp&nbsp&nbsp&nbsp&nbsp</strong>
+                  <a href="{{route('userpanel.index')}}" class="aa-login">My Account</a>
+                  <a href="/logoutuser" class="aa-login"><font color="black">/</font>Logout</a>
 
                   @endauth
                   @guest

@@ -55,9 +55,9 @@
                       <span>{{$rs->numberofrooms}} Rooms</span>
                         <span>{{$rs->numberofbathrooms}} Baths</span>
                        <span>{{$rs->metre}} SQ FT</span>
-                       <span><span><span></span></span></span>
+                       <span><span></span></span>
                     <span class="fa fa-star checked"><font color="black"><b>{{number_format($average,1)}}</b>/5</font></span>
-                    <span>({{$count}}) </span>
+                    <span><i class="fa fa-comment-o"></i> {{$count}} </span>
                       </div>
                       <div class="aa-properties-about">
                         <h3><a href="{{route('house',['id'=>$rs->id])}}">{{$rs->title}}</a></h3>
