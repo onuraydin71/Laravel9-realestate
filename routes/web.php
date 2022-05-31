@@ -58,6 +58,8 @@ Route::middleware('auth')->group(function() {
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
 
         Route::get('/','index')->name('index');
+        Route::get('/reviews','reviews')->name('reviews');
+        Route::get('/reviewdelete/{id}','reviewdelete')->name('reviewdelete');
     });
 
 //**********************ADMIN PANEL ROUTES**********************/

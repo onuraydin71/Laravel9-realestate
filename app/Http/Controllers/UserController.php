@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Comment;
 
 class UserController extends Controller
 {
@@ -19,6 +21,16 @@ class UserController extends Controller
             'setting'=>$setting,
 
     ]);
+    }
+
+    public function reviews()
+    {
+        $comments=Comment::where('user_id','=',Auth::id())->get();
+        $setting=Setting::first();
+        return view('home.user.comments',[
+            'comments'=>$comments,
+            'setting'=>$setting,
+        ]);
     }
 
     /**
@@ -82,8 +94,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function reviewdelete($id)
     {
-        //
+        $data=Comment::find($id);
+        $data->delete();
+        return redirect (route('userpanel.reviews'));
     }
+
+
 }
