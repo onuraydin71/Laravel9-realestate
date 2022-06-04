@@ -38,7 +38,7 @@
    
             <li class="{{ 'admin/about' == request()->path() ? 'active' : '' }}"><a href="{{route('admin.about')}}">About Us</a></li>
             <li class="{{ 'admin/references' == request()->path() ? 'active' : '' }}"><a href="{{route('admin.references')}}">References</a></li>
-            <li class="{{ 'admin/faq' == request()->path() ? 'active' : '' }}"><a href="{{route('faq')}}">FAQ</a></li>
+            <li class="{{ 'faq' == request()->path() ? 'active' : '' }}"><a href="{{route('faq')}}">FAQ</a></li>
             <li class="{{ 'admin/contact' == request()->path() ? 'active' : '' }}"><a href="{{route('admin.contact')}}">Contact</a></li>
           </ul>                            
         </div><!--/.nav-collapse -->       
