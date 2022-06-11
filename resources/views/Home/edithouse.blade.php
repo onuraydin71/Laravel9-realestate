@@ -217,9 +217,8 @@
                         <div class="form-group">
                         <label>Status</label>
                         <select class="custom-select col-12" name="status">
-                                    <option selected=>True</option>
-                                    <option >True</option>
-                                   
+                                    <option selected=>{{$data->status}}</option>
+
                                 </select>
                                 </div>
 

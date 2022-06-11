@@ -47,7 +47,7 @@
 						</div>
 						
 					</div>
-					<form role ="form" action="{{route('admin.house.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+					<form role ="form" action="{{route('admin.house.update',['id'=>$data->id],['user_id'=>$data->user_id])}}" method="post" enctype="multipart/form-data">
                         @csrf
 
 						<div class="form-group">
@@ -60,6 +60,15 @@
                              @endforeach
 						</select>
 						</div>
+								
+
+						<div class="form-group">
+                        <label>User Id</label>
+                        <select class="custom-select col-12" name="user_id">
+                                    <option selected=>{{$data->user_id}}</option>
+
+                                </select>
+                                </div>
 
 						<div class="form-group">
 							<label for="exampleInputEmail1">Title</label>
