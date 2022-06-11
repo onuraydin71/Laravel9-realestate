@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(related: Role::class,table: 'role_users');
     }
+
+    public function shopcart()
+    {
+        return $this->hasMany(related: ShopCart::class);
+    }
 }

@@ -13,7 +13,9 @@ use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
+use App\Http\Controllers\AdminPanel\AdminUserHouseController;
 use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,13 +45,20 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/house/{id}',[HomeController::class,'house'])->name('house');
+Route::get('/userhouse/{id}',[HomeController::class,'userhouse'])->name('userhouse');
 Route::get('/categoryhouses/{id}/{slug}',[HomeController::class,'categoryhouses'])->name('categoryhouses');
 Route::get('/',[HomeController::class,'index'])->name('admin');
 
 Route::get('/deneme',[TestController::class,'deneme']);
 
 Route::get('/faq',[HomeController::class,'faq'])->name(name:'faq');
+//**********************ADMIN PAGE ROUTES**********************/
 
+Route::get('about',[HomeController::class,'about'])->name(name:'about');
+Route::get('/references',[HomeController::class,'references'])->name(name:'references');
+Route::get('/contact',[HomeController::class,'contact'])->name(name:'contact');
+Route::post('storemessage',[HomeController::class,'storemessage'])->name(name:'storemessage');
+Route::post('storecomment',[HomeController::class,'storecomment'])->name(name:'storecomment');
 
 //**********************USER AUTH CONTROL**********************/
 Route::middleware('auth')->group(function() {
@@ -57,23 +66,35 @@ Route::middleware('auth')->group(function() {
 //**********************USER ROUTES**********************/
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
 
+        //**********************ADMIN USERHOUSE ROUTES**********************/
+    Route::prefix('/userhouse')->name('userhouse.')->controller(AdminUserHouseController::class)->group(function () {
+
+    Route::get('/','index')->name(name:'index');
+    Route::get('/create','create')->name(name:'create');
+    Route::post('/store','store')->name(name:'store');
+    Route::get('/edit/{id}','edit')->name(name:'edit');
+    Route::post('/update/{id}','update')->name(name:'update');
+    Route::get('/show/{id}','show')->name(name:'show');
+    Route::get('/delete/{id}','destroy')->name(name:'delete');
+    }); 
+
         Route::get('/','index')->name('index');
         Route::get('/reviews','reviews')->name('reviews');
+        Route::get('/myhouses','myhouses')->name('myhouses');
         Route::get('/reviewdelete/{id}','reviewdelete')->name('reviewdelete');
+        Route::get('/addhouse',[UserController::class,'addhouse'])->name(name:'addhouse');
+        Route::get('/edithouse/{id}',[UserController::class,'edithouse'])->name(name:'edithouse');
+        Route::get('/edithouse1/{id}',[UserController::class,'edithouse1'])->name(name:'edithouse1');
+        Route::post('/updatehouse/{id}',[UserController::class,'updatehouse'])->name(name:'updatehouse');
+        Route::post('/updatehouse1/{id}',[UserController::class,'updatehouse1'])->name(name:'updatehouse1');
+        Route::get('/showhouse/{id}',[UserController::class,'showhouse'])->name(name:'showhouse');
+        Route::get('/showhouse1/{id}',[UserController::class,'showhouse1'])->name(name:'showhouse1');
+        Route::get('/deletehouse/{id}',[UserController::class,'deletehouse'])->name(name:'deletehouse');
+        Route::get('/deletehouse1/{id}',[UserController::class,'deletehouse1'])->name(name:'deletehouse1');
     });
 
 //**********************ADMIN PANEL ROUTES**********************/
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
-
-//**********************ADMIN PAGE ROUTES**********************/
-Route::get('',[AdminHomeController::class,'index'])->name(name:'index');
-Route::get('about',[HomeController::class,'about'])->name(name:'about');
-Route::get('/references',[HomeController::class,'references'])->name(name:'references');
-Route::get('/contact',[HomeController::class,'contact'])->name(name:'contact');
-Route::post('storemessage',[HomeController::class,'storemessage'])->name(name:'storemessage');
-Route::post('storecomment',[HomeController::class,'storecomment'])->name(name:'storecomment');
-
-
 
 //**********************GENERAL ROUTES**********************/
 Route::get('/setting',[AdminHomeController::class,'setting'])->name(name:'setting');
@@ -91,6 +112,8 @@ Route::prefix('/house')->name('house.')->controller(AdminHouseController::class)
     Route::get('/show/{id}','show')->name(name:'show');
     Route::get('/delete/{id}','destroy')->name(name:'delete');
     });
+
+ Route::get('',[AdminHomeController::class,'index'])->name(name:'index');
     
 //**********************ADMIN CATEGORY ROUTES**********************/
 Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {

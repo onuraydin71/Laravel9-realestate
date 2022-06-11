@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','User List')
+@section('title','House List')
 
  
 
@@ -15,7 +15,7 @@
 						<div class="pull-left">
 
 							
-							<h4 class="text-blue h4">User List</h4>
+							<h4 class="text-blue h4">House List</h4>
 						</div>
 						<div class="pull-right">
 							
@@ -26,8 +26,14 @@
 							<tr>
 								<th style="width: 10px">Id</th>
 								<th>Name</th>
-								<th>Email</th>
-								<th>Role</th>
+								<th>Category</th>
+								<th>Title</th>
+								<th>Price</th>
+								<th>Property Type</th>
+								<th>m²</th>
+								<th>Image</th>
+								<th>Status</th>
+								
 								<th style="width:40px">Delete</th>
 								<th style="width:40px">Show</th>
 							</tr>
@@ -37,20 +43,27 @@
 						@foreach($data as $rs)
 							<tr>
 								<td>{{$rs->id}}</td>
-								<td>{{$rs->name}}</td>
-								<td>{{$rs->email}}</td>
+								<td>{{$rs->user->name}}</td>
 								<td>
-									@foreach($rs->roles as $role)
-										{{$role->name}}
-									@endforeach
+								{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}
 								</td>
-								
-                                <td><a href="{{route('admin.user.delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger">Delete</a></td>
-                                <td> <a href="{{route('admin.user.show',['id'=>$rs->id])}}" class="btn btn-warning"
+								<td>{{$rs->title}}</td>
+								<td>{{$rs->price}}</td>
+								<td>{{$rs->propertytype}}</td>
+								<td>{{$rs->metre}}</td>
+								<td>
+									@if ($rs->image)
+									<img src="{{ asset('storage/img/'.$rs->image)}}" style="height: 40px">
+									@endif
+								</td>
+								<td>{{$rs->status}}</td>
+                                <td><a href="{{route('userpanel.userhouse.delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are you sure?')" class="btn btn-danger">Delete</a></td>
+                                <td> <a href="{{route('userpanel.userhouse.show',['id'=>$rs->id])}}" class="btn btn-warning"
 								onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
 								 Show
 								</a>
 								</td>
+								
 							<tr>
 							
 						@endforeach

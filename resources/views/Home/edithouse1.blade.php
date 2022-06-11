@@ -1,60 +1,53 @@
-@extends('layouts.adminbase')
+@extends('layouts.frontbase')
 
-@section('title','Edit House')
+@section('title','Add House | '.$setting->title)
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
+
 
 @section('head')
  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
  @endsection
-
-
   @section('content')
+  
 
-	<div class="main-container">
-		<div class="pd-ltr-20 xs-pd-20-10">
-			<div class="min-height-200px">
-            <div class="page-header">
-					<div class="row">
-						<div class="col-md-6 col-sm-12">
-							<div class="title">
-								<h4>Form</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="/admin">House</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Edit House : {{$data->title}}</li>
-								</ol>
-							</nav>
-						</div>
-						<div class="col-md-6 col-sm-12 text-right">
-							<div class="dropdown">
-								<a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									April 2022
-								</a>
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Export List</a>
-									<a class="dropdown-item" href="#">Policies</a>
-									<a class="dropdown-item" href="#">View Assets</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-            <div class="pd-20 card-box mb-30">
-					<div class="clearfix">
-						<div class="pull-left">
-							<h4 class="text-blue h2">Edit House :  {{$data->title}}</h2>
-							
-						</div>
-						
-					</div>
-					<form role ="form" action="{{route('admin.house.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+
+ <!-- Start Proerty header  -->
+
+ <section id="aa-property-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-property-header-inner">
+            <h2>Add House</h2>
+            <ol class="breadcrumb">
+            <li><a href="{{route('admin')}}">User Panel</a></li>            
+            <li class="active">Add House</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+  <!-- End Proerty header  -->
+
+ <section id="aa-contact">
+   <div class="container">
+     <div class="row">
+	 <div class="col-md-2">
+         <h3><font color="blue">USER MENU</font></h3>
+    @include('home.user.usermenu')
+         </div>
+     <div class="col-md-6">
+	 <h3><font color="blue">Edit House</font></h3>
+     <form role ="form" action="{{route('userpanel.updatehouse1',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
 
 						<div class="form-group">
 							<label>Parent House</label>
 
 							<select class="from-control select2" name="category_id" style="width: 100%;">
-							@foreach($datalist as $rs)
+							@foreach($category as $rs)
                             	<option value="{{$rs->id}}" @if ($rs->id == $data->category_id) selected="selected" @endif>
                                 {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                              @endforeach
@@ -86,7 +79,7 @@
 						</div>
 
 						<div class="form-group">
-                        <label>Property Type</label>
+                        <label>Property Type</label><br>
                         <select class="custom-select col-12" name="propertytype" value="{{$data->propertytype}}">
 									<option selected="">{{$data->propertytype}}</option>
 									<option >Apartment</option>
@@ -133,7 +126,7 @@
 						</div>
 
 						<div class="form-group">
-                        <label>Warm-up Type</label>
+                        <label>Warm-up Type</label><br>
                         <select class="custom-select col-12" name="warmuptype">
 									<option selected="">{{$data->warmuptype}}</option>
 									<option >Natural Gas Central Heating System</option>
@@ -151,7 +144,7 @@
 						</div>
 
 						<div class="form-group">
-                        <label>Balcony</label>
+                        <label>Balcony</label><br>
                         <select class="custom-select col-12" name="balcony" value="{{$data->balcony}}">
 									<option selected="">{{$data->balcony}}</option>
 									<option >Yes</option>
@@ -161,7 +154,7 @@
                                 </div>
 
 								<div class="form-group">
-                        <label>Furnished</label>
+                        <label>Furnished</label><br>
                         <select class="custom-select col-12" name="furnished" value="{{$data->furnished}}">
 									<option selected="">{{$data->furnished}}</option>
 									<option >Yes</option>
@@ -181,8 +174,8 @@
 						</div>
 
 						<div class="form-group">
-                        <label>Swap</label>
-                        <select class="custom-select col-12" name="swap">
+                        <label>Swap</label><br>
+                        <select class="custom-select col-12" name="swap" >
 									<option selected="">{{$data->swap}}</option>
 									<option >Yes</option>
 									<option >No</option> 
@@ -215,7 +208,7 @@
 							<div class="input-group">
 								<div class="custom-file">
 								<input type="file" class="custom-file-input" name="image">
-								<label class="custom-file-label" for="exampleInputFile">Choose image file</label>
+							
 
 								</div>
 							</div>
@@ -224,10 +217,9 @@
                         <div class="form-group">
                         <label>Status</label>
                         <select class="custom-select col-12" name="status">
-                                    <option selected=>{{$data->status}}</option>
-                                    <option >True</option>
-                                    <option >False</option> 
-
+                                    <option selected=>False</option>
+                                    <option >False</option>
+                                   
                                 </select>
                                 </div>
 
@@ -236,5 +228,13 @@
                                 <button type="submit" class="btn btn-primary">Update Data</button>
                         </div>
 					</form>
-					
+
+     </div>
+
+     </div>
+   </div>
+ </section>
+
+
+
   @endsection

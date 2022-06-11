@@ -39,7 +39,7 @@
    <div class="container">
      <div class="row">
             
-            <h1>Frequently Asked Questions</h1>
+           
 
           <div id="accordion">
             @foreach($datalist as $rs)

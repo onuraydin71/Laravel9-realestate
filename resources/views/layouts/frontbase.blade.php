@@ -13,7 +13,8 @@
     <meta name="author" content="Onur AYDIN">
     <script src="https://kit.fontawesome.com/5ea815c1d0.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
+   
     <!-- Favicon -->
     
     <link rel="shortcut icon" href="{{asset('storage/img/'.$setting->icon)}}" type="image/x-icon">

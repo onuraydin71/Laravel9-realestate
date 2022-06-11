@@ -41,9 +41,9 @@
              <div class="aa-properties-info">
                <h2>{{$data->title}}</h2>
                <span class="aa-price">{{$data->price}} ₺</span>
-               <p>{{$data->description}}</p>
+
                
-               <br>
+                <br>
                <h3 style="color:#f00;"><b>Home Features</b></h3>
                <ul>
                  <b><u>{{$data->location}}</u></b></li>
@@ -139,7 +139,7 @@
                         <p class="comment-notes">
                             Your email address will not be published. Required fields are marked <span class="required">*</span>
                           </p>
-                        <form id="commentform" action="{{route('admin.storecomment')}}" method="POST">
+                        <form id="commentform" action="{{route('storecomment')}}" method="POST">
                           @csrf
                           <p class="comment-form-author">
                             <input type="hidden" required="required" size="30" value="{{$data->id}}" name="house_id">

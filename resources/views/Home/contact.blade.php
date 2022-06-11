@@ -51,13 +51,14 @@
             </div>
             <div class="aa-contact-bottom">
               <div class="aa-title">
+              @include('home.messages')
                 <h2>Send Your Message</h2>
                 <span></span>
                 <p>Your email address will not be published. Required fields are marked <strong class="required">*</strong></p>
               </div>
-              @include('home.messages')
+             
               <div class="aa-contact-form">
-                <form action="{{route('admin.storemessage')}}" class="contactform" method="post">         
+                <form action="{{route('storemessage')}}" class="contactform" method="post">         
                   @csrf         
                   <p class="comment-form-author">
                     <label for="author">Name <span class="required">*</span></label>

@@ -110,4 +110,11 @@ class AdminUserController extends Controller
         $user->roles()->detach($rid);
         return redirect(route('admin.user.show',['id'=>$uid]));
     }
+
+    public function destroy($id)
+    {
+        $user= User::find($id);
+        $user->delete();
+        return redirect(route('admin.user.index'));
+    }
 }

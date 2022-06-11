@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
-
+use App\Models\Category;
+use App\Models\UserHouse;
+use App\Models\House;
+use Illuminate\Support\Facades\File;
 class UserController extends Controller
 {
     /**
@@ -32,6 +35,178 @@ class UserController extends Controller
             'setting'=>$setting,
         ]);
     }
+
+
+    public function myhouses()
+    {
+        $house1= UserHouse::where('user_id','=',Auth::id())->get();
+        $house= House::where('user_id','=',Auth::id())->get();
+        $setting=Setting::first();
+        return view('home.user.myhouses',[
+            'house1'=>$house1,
+            'house'=>$house,
+            'setting'=>$setting,
+        ]);
+    }
+
+    public function addhouse(){
+
+        $setting=Setting::first();
+        $category = Category::all();
+        return view('home.addhouse',[
+            'setting'=>$setting,
+            'category'=>$category
+        ]);
+    }
+
+    public function edithouse(House $house,$id){
+
+        $data=House::find($id);
+        $setting=Setting::first();
+        $category = Category::all();
+        return view('home.edithouse',[
+            'data'=>$data,
+            'setting'=>$setting,
+            'category'=>$category
+        ]);
+    } 
+
+    public function edithouse1(UserHouse $userhouse,$id){
+
+        $data=UserHouse::find($id);
+        $setting=Setting::first();
+        $category = Category::all();
+        return view('home.edithouse1',[
+            'data'=>$data,
+            'setting'=>$setting,
+            'category'=>$category
+        ]);
+    } 
+
+    public function showhouse(House $house,$id){
+
+        $data=House::find($id);
+        $setting=Setting::first();
+        $category = Category::all();
+        return view('home.showhouse',[
+            'data'=>$data,
+            'setting'=>$setting,
+            'category'=>$category
+        ]);
+    } 
+
+    public function showhouse1(UserHouse $userhouse,$id){
+
+        $data=UserHouse::find($id);
+        $setting=Setting::first();
+        $category = Category::all();
+        return view('home.showhouse',[
+            'data'=>$data,
+            'setting'=>$setting,
+            'category'=>$category
+        ]);
+    } 
+
+    public function deletehouse(House $house,$id)
+    {
+        $data=House::find($id);
+        $destination= 'storage/img/'.$data->image;
+        if(File::exists($destination))
+        {
+            File::delete($destination);
+        }
+        $data->delete();
+        return redirect ('userpanel/myhouses');
+    }
+
+    public function deletehouse1(UserHouse $userhouse,$id)
+    {
+        $data=UserHouse::find($id);
+        $destination= 'storage/img/'.$data->image;
+        if(File::exists($destination))
+        {
+            File::delete($destination);
+        }
+        $data->delete();
+        return redirect ('userpanel/myhouses');
+    }
+
+    public function updatehouse(Request $request, House $house,$id)
+    {
+        $data=House::find($id);
+        $data->category_id= $request->category_id;
+        $data->user_id= Auth::id(); //$request->category_id;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->price = $request->price;
+        $data->metre = $request->metre;
+        $data->numberofrooms = $request->numberofrooms;
+        $data->buildingage = $request->buildingage;
+        $data->floorlocation = $request->floorlocation;
+        $data->numberoffloors = $request->numberoffloors;
+        $data->warmuptype = $request->warmuptype;
+        $data->numberofbathrooms = $request->numberofbathrooms;
+        $data->balcony = $request->balcony;
+        $data->furnished = $request->furnished;
+        $data->usingstatus = $request->usingstatus;
+        $data->dues = $request->dues;
+        $data->swap = $request->swap;
+        $data->propertytype = $request->propertytype;
+        $data->location = $request->location;
+        $data->status = $request->status;
+        if ($request->hasFile('image')){
+           
+            $file= $request->file('image');
+            $extention= $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $file->move('storage/img/',$filename);
+            $data->image= $filename;
+        }
+        $data->save();
+        return redirect ('userpanel/myhouses');
+
+    } 
+
+    public function updatehouse1(Request $request, UserHouse $userhouse,$id)
+    {
+        $data=UserHouse::find($id);
+        $data->category_id= $request->category_id;
+        $data->user_id= Auth::id(); //$request->category_id;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->price = $request->price;
+        $data->metre = $request->metre;
+        $data->numberofrooms = $request->numberofrooms;
+        $data->buildingage = $request->buildingage;
+        $data->floorlocation = $request->floorlocation;
+        $data->numberoffloors = $request->numberoffloors;
+        $data->warmuptype = $request->warmuptype;
+        $data->numberofbathrooms = $request->numberofbathrooms;
+        $data->balcony = $request->balcony;
+        $data->furnished = $request->furnished;
+        $data->usingstatus = $request->usingstatus;
+        $data->dues = $request->dues;
+        $data->swap = $request->swap;
+        $data->propertytype = $request->propertytype;
+        $data->location = $request->location;
+        $data->status = $request->status;
+        if ($request->hasFile('image')){
+           
+            $file= $request->file('image');
+            $extention= $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $file->move('storage/img/',$filename);
+            $data->image= $filename;
+        }
+        $data->save();
+        return redirect ('userpanel/myhouses');
+
+    }
+    
 
     /**
      * Show the form for creating a new resource.

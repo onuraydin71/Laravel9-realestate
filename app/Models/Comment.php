@@ -20,5 +20,10 @@ class Comment extends Model
         return $this->belongsTo(related: House::class);
 
     }
+    public function userhouse()
+    {
+        return $this->belongsTo(related: UserHouse::class);
+
+    }
     
 }

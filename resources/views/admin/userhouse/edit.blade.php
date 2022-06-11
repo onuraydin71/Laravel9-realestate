@@ -88,7 +88,7 @@
 						<div class="form-group">
                         <label>Property Type</label>
                         <select class="custom-select col-12" name="propertytype" value="{{$data->propertytype}}">
-									<option selected="">{{$data->propertytype}}</option>
+									<option selected="">Choose...</option>
 									<option >Apartment</option>
 									<option >Residence</option> 
 									<option >Detached house</option> 
@@ -135,7 +135,7 @@
 						<div class="form-group">
                         <label>Warm-up Type</label>
                         <select class="custom-select col-12" name="warmuptype">
-									<option selected="">{{$data->warmuptype}}</option>
+									<option selected="">Choose...</option>
 									<option >Natural Gas Central Heating System</option>
 									<option >Liquid Fuel Central Heating Systems</option> 
 									<option >LPG Central Heating Systems</option> 
@@ -153,7 +153,7 @@
 						<div class="form-group">
                         <label>Balcony</label>
                         <select class="custom-select col-12" name="balcony" value="{{$data->balcony}}">
-									<option selected="">{{$data->balcony}}</option>
+									<option selected="">Choose...</option>
 									<option >Yes</option>
 									<option >No</option> 
 									
@@ -163,7 +163,7 @@
 								<div class="form-group">
                         <label>Furnished</label>
                         <select class="custom-select col-12" name="furnished" value="{{$data->furnished}}">
-									<option selected="">{{$data->furnished}}</option>
+									<option selected="">Choose...</option>
 									<option >Yes</option>
 									<option >No</option> 
 									
@@ -183,7 +183,7 @@
 						<div class="form-group">
                         <label>Swap</label>
                         <select class="custom-select col-12" name="swap">
-									<option selected="">{{$data->swap}}</option>
+									<option selected="">Choose...</option>
 									<option >Yes</option>
 									<option >No</option> 
 									
@@ -224,7 +224,7 @@
                         <div class="form-group">
                         <label>Status</label>
                         <select class="custom-select col-12" name="status">
-                                    <option selected=>{{$data->status}}</option>
+                                    <option selected=>True</option>
                                     <option >True</option>
                                     <option >False</option> 
 

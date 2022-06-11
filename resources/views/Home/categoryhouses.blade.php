@@ -73,7 +73,7 @@
                   </article>
                 </li>
               @endforeach
-
+             
               
               </ul>
             </div>

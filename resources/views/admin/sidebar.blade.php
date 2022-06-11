@@ -94,18 +94,13 @@
                         </a>
                     </li>
 
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
+					<li>
+                        <a href="/userpanel/userhouse" class="dropdown-toggle no-arrow">
 						
-							<span class="micon icon-copy ion-ios-box">  </span><span class="mtext">Orders</span>
-						</a> 
-						<ul class="submenu">
-							<li><a href="index.html">New Orders</a></li>
-							<li><a href="index2.html">Accepted Orders</a></li>
-							<li><a href="index3.html">Shipping Orders</a></li>
-							<li><a href="index4.html">Completed Orders</a></li>
-						</ul>
-					</li>
+                            <span class="micon icon-copy ion-ios-box">  </span><span class="mtext">User Houses</span>
+                        </a>
+                    </li>
+					
 					
 					<li>
                         <a href="/admin/category" class="dropdown-toggle no-arrow">

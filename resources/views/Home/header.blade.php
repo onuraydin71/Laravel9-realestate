@@ -25,7 +25,6 @@
                   <strong class="text-uppercase">{{Auth::user()->name}}&nbsp&nbsp&nbsp&nbsp&nbsp</strong>
                   <a href="{{route('userpanel.index')}}" class="aa-login">My Account</a>
                   <a href="/logoutuser" class="aa-login"><font color="black">/</font>Logout</a>
-
                   @endauth
                   @guest
                   <div class="aa-header-right">

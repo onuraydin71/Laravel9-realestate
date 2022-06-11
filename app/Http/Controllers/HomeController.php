@@ -10,6 +10,7 @@ use App\Models\Setting;
 use App\Models\Message;
 use App\Models\Faq;
 use App\Models\Comment;
+use App\Models\UserHouse;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -30,8 +31,8 @@ class HomeController extends Controller
     public function index(){
           
         $page='home';
-        $sliderdata=House::limit(4)->get();
-        $houselist=House::limit(15)->get();
+        $sliderdata=House::limit(4)->where('status','True')->get();
+        $houselist=House::limit(15)->where('status','True')->get();
         $housegallery=House::limit(200)->get();
         $setting=Setting::first();
 
@@ -94,7 +95,7 @@ class HomeController extends Controller
         $data->ip= request()->ip();
         $data->save();
         
-        return redirect()->route('admin.contact')->with('info','YOUR MESSAGE HAS BEEN SENT , THANK YOU.');
+        return redirect()->route('contact')->with('info','YOUR MESSAGE HAS BEEN SENT , THANK YOU.');
     }
 
     public function storecomment(Request $request){
@@ -116,7 +117,7 @@ class HomeController extends Controller
         $category=Category::find($id);
         $data=House::find($id);
         $images= DB::table('images')->where('house_id',$id)->get();
-        $setting=Setting::first();
+        $setting=Setting::first(); 
         $reviews= Comment::where('house_id',$id)->where('status','True')->get();
         return view('home.house',[
             'category'=>$category,
@@ -127,10 +128,11 @@ class HomeController extends Controller
         ]);
     }
 
+
     public function categoryhouses($id){
 
         $category=Category::find($id);
-        $houses= DB::table('houses')->where('category_id',$id)->get();
+        $houses= DB::table('houses')->where('category_id',$id)->where('status','True')->get();
         $setting=Setting::first();
         return view('home.categoryhouses',[
             'category'=>$category,
@@ -218,6 +220,7 @@ class HomeController extends Controller
         'setting'=>$setting
         ]);
     }
-
+    
+    
     
 }
